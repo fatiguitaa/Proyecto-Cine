@@ -3,38 +3,33 @@
 const $ = element => document.querySelector(element)
 const $$ = element => document.querySelectorAll(element)
 
-const validarEmail = email => {
-    const emailRegex = /[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i
+const validarEmail = function (email){
+    const emailRegex = /[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i 
     return emailRegex.test(email)
 }
 
-const validarContrasena = contrasena => {
+const validarContrasena = function (contrasena){
     if (contrasena.length < 8) return "El largo de la contraseña debe ser mayor a 8."
 
     let tieneMayuscula
+    let tieneNumero
+
     for (let caracter of contrasena){
         
-        if (/[AZ]/.test(caracter)) {
+        if (/[A-Z]/.test(caracter)) {
             tieneMayuscula = true
         }
-    }
-
-    if (!tieneMayuscula) return "La contraseña debe contener al menos 1 mayuscula."
-    
-    let tieneNumero
-    for (let caracter of contrasena){
         
-        if (/\d/.test(caracter)) {
+        else if (/\d/.test(caracter)) { 
             tieneNumero = true
         }
     }
-
-    if (!tieneNumero) return "La contraseña debe contener al menos 1 numero."
+    
+    if (!tieneMayuscula) return "La contraseña debe contener al menos una letra mayúscula."
+    else if (!tieneNumero) return "La contraseña debe contener al menos un número."
 }
 
-
-
-$(".login__enviar").addEventListener("click", async evento => {
+$(".login__enviar").addEventListener("click", evento => {
     evento.preventDefault()
 
     $(".error__mensaje").textContent = ""
@@ -55,7 +50,11 @@ $(".login__enviar").addEventListener("click", async evento => {
     }
 })
 
+$(".login__visibilidad").addEventListener("click", evento => {
+    evento.preventDefault()
+    $(".login__visibilidad").classList.toggle("mostrar")
 
-
-
-document.addEventListener
+    $(".login__contrasena").type === "password"
+    ? $(".login__contrasena").type = "text"
+    : $(".login__contrasena").type = "password"
+})
