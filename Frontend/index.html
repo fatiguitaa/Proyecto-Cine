@@ -3,35 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTDuNN5vGcXnSSehgS2qhkbFqbURhC8V5fBGQGyWnJwwjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="./src/css/boostrap/bootstrap.min.css">
     <link rel="stylesheet" href="./src/css/normalize.css">
     <link rel="stylesheet" href="./src/css/globales.css">
     <link rel="stylesheet" href="./src/css/index.css">
-    <title>Cine G1</title>
+    <title>Cine G1 - Login</title>
 </head>
 
-<body>
-    <h1>Iniciar sesión</h1>
-
-    <form class="login">
-        <label for="email">E-Mail</label>
-        <input type="email" name="email" class="login__email">
-
-        <label for="contrasena">Contraseña</label>
-        <input type="password" name="contrasena" class="login__contrasena">
-        
-        <button class="login__visibilidad"></button>
-        
-        <input type="submit" class="login__enviar">
-    </form>
-
-
-    <div class="error">
-        <p class="error__mensaje"></p>
+<body class="cargando">
+    <div class="carga d-flex justify-content-center align-items-center">
+        <div class="carga__icono"></div>
     </div>
 
-    <p>¿No tenés una cuenta? <a href="./registrar.html">Regístrate.</a></p>
+    <main class="card--login">
+        <h1>Iniciar sesión</h1>
+        
+        <form class="login">
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" class="login__email">
+    
+            <label for="contrasena">Contraseña</label>
+            <input type="password" name="contrasena" class="login__contrasena">
+            
+            <button class="login__visibilidad"></button>
+            
+            <input type="submit" value="Ingresar" class="login__enviar">
+        </form>
+    
+    
+        <div class="error">
+            <p class="error__mensaje"></p>
+        </div>
+    
+        <p>¿No tenés una cuenta? <a href="./registrar.html">Regístrate.</a></p>
+    </main>
 
-    <script src="./src/js/index.js"></script>
+    <script src="./src/js/boostrap/bootstrap.min"></script>
+    <script src="./src/js/index.js" type="module"></script>
 </body>
 </html>

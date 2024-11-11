@@ -52,9 +52,18 @@ $(".login__enviar").addEventListener("click", evento => {
 
 $(".login__visibilidad").addEventListener("click", evento => {
     evento.preventDefault()
+
     $(".login__visibilidad").classList.toggle("mostrar")
 
     $(".login__contrasena").type === "password"
-    ? $(".login__contrasena").type = "text"
+    ? $(".login__contrasena").type = "text" 
     : $(".login__contrasena").type = "password"
+})
+
+window.addEventListener("load", () => {
+    $("body").classList.remove("cargando")
+
+    $(".carga").addEventListener("transitionend", () => {
+        $(".carga").remove()
+    })
 })

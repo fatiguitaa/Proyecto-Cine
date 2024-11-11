@@ -6,8 +6,44 @@ body {
     font-size: 1.6rem; /* 1 rem = 10 px */
 }
 
+.carga {
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+
+    position: fixed;
+    inset: 0;
+
+    background-color: #0a1128;
+}
+
+.carga__icono {
+    width: 5.6rem;
+    height: 5.6rem;
+    border-radius: 50%;
+    border: 9px solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #FEFCFB;
+    animation: girar 1s infinite linear;
+}
+
+@keyframes girar {
+    to {
+       transform: rotate(1turn);
+    }
+}
+
+.cargando .carga {
+    opacity: 1;
+    overflow: hidden;
+}
+
 button, input[type="submit"] {
     cursor: pointer;
+}
+
+button * {
+    width: 100%;
+    height: 100%;
 }
 
 a {
@@ -21,3 +57,4 @@ video {
   height: auto;
   display: block;
 }
+
