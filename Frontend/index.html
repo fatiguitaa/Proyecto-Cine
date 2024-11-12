@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,35 +10,39 @@
     <title>Cine G1 - Login</title>
 </head>
 
-<body class="cargando">
+<body class="cargando d-flex justify-content-center align-items-center flex-column vh-100 ">
+
     <div class="carga d-flex justify-content-center align-items-center">
         <div class="carga__icono"></div>
     </div>
 
-    <main class="card--login">
-        <h1>Iniciar sesión</h1>
+    <main class="login d-flex flex-column">
+
+        <h1 class="login__titulo">¡Bienvenido a tu próxima función!</i></h1>
         
-        <form class="login">
+        <form class="login__panel d-flex flex-column">
+
             <label for="email">E-Mail</label>
-            <input type="email" name="email" class="login__email">
+            <input type="email" name="email" class="login__panel__email input">
     
             <label for="contrasena">Contraseña</label>
-            <input type="password" name="contrasena" class="login__contrasena">
+            <div class="login__panel__contrasena d-flex justify-content">
+                <input type="password" name="contrasena" class="login__panel__contrasena__input input">
             
-            <button class="login__visibilidad"></button>
+                <button class="login__panel__contrasena__visibilidad boton"></button>
+            </div>
             
-            <input type="submit" value="Ingresar" class="login__enviar">
+            <input type="submit" value="Ingresar" class="login__panel__enviar boton">
         </form>
     
+        <div class="login__error"></div>
     
-        <div class="error">
-            <p class="error__mensaje"></p>
-        </div>
-    
-        <p>¿No tenés una cuenta? <a href="./registrar.html">Regístrate.</a></p>
+        <p class="login__registrarse">¿No tenés una cuenta? <a href="./registrar.html" class="login__registrarse__link">¡Empezá tu aventura!</a></p>
     </main>
 
     <script src="./src/js/boostrap/bootstrap.min"></script>
-    <script src="./src/js/index.js" type="module"></script>
+    <script src="./src/js/utils/domUtils.js"></script>
+    <script src="./src/js/entrada.js"></script>
+    <script src="./src/js/index.js"></script>
 </body>
 </html>

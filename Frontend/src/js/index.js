@@ -1,8 +1,5 @@
 "use strict";
 
-const $ = element => document.querySelector(element)
-const $$ = element => document.querySelectorAll(element)
-
 const validarEmail = function (email){
     const emailRegex = /[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+(?:\.[-A-Za-z0-9!#$%&'*+\/=?^_`{|}~]+)*@(?:[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[-A-Za-z0-9]*[A-Za-z0-9])?/i 
     return emailRegex.test(email)
@@ -29,41 +26,41 @@ const validarContrasena = function (contrasena){
     else if (!tieneNumero) return "La contraseña debe contener al menos un número."
 }
 
-$(".login__enviar").addEventListener("click", evento => {
+const mostrarError = function (mensaje) {
+    if ($(".login__error__mensaje")) $(".login__error__mensaje").remove()
+        
+    const error = document.createElement("p")
+    error.textContent = mensaje
+    error.classList.add("login__error__mensaje")
+
+    $(".login__error").appendChild(error)
+}
+
+$(".login__panel__enviar").addEventListener("click", evento => {
     evento.preventDefault()
 
-    $(".error__mensaje").textContent = ""
 
-    const email = $(".login__email").value
+    const email = $(".login__panel__email").value
 
     if (!validarEmail(email)) {
-        $(".error__mensaje").textContent = "Correo electrónico inválido: nombre@dominio.tld"
+        mostrarError("Correo electrónico inválido: nombre@dominio.tld")
         return
     }
 
-    const contrasena = $(".login__contrasena").value
+    const contrasena = $(".login__panel__contrasena__input").value
     const contrasenaInvalid = validarContrasena(contrasena)
 
     if (contrasenaInvalid) {
-        $(".error__mensaje").textContent = contrasenaInvalid
+        mostrarError(contrasenaInvalid)
         return
     }
 })
 
-$(".login__visibilidad").addEventListener("click", evento => {
+$(".login__panel__contrasena__visibilidad").addEventListener("click", evento => {
     evento.preventDefault()
 
-    $(".login__visibilidad").classList.toggle("mostrar")
+    $(".login__panel__contrasena__visibilidad").classList.toggle("mostrar")
 
-    $(".login__contrasena").type === "password"
-    ? $(".login__contrasena").type = "text" 
-    : $(".login__contrasena").type = "password"
-})
-
-window.addEventListener("load", () => {
-    $("body").classList.remove("cargando")
-
-    $(".carga").addEventListener("transitionend", () => {
-        $(".carga").remove()
-    })
+    if($(".login__panel__contrasena__input").type === "password") $(".login__panel__contrasena__input").type = "text" 
+    else $(".login__panel__contrasena__input").type = "password"
 })
