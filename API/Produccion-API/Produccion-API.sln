@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CineAPI", "CineAPI.csproj", "{79BA6357-1BDB-4C81-BF52-A1458AF81887}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Produccion-API", "Produccion-API.csproj", "{CA408248-3125-456F-B301-F96A7FD2F6CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{79BA6357-1BDB-4C81-BF52-A1458AF81887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79BA6357-1BDB-4C81-BF52-A1458AF81887}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79BA6357-1BDB-4C81-BF52-A1458AF81887}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79BA6357-1BDB-4C81-BF52-A1458AF81887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA408248-3125-456F-B301-F96A7FD2F6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA408248-3125-456F-B301-F96A7FD2F6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA408248-3125-456F-B301-F96A7FD2F6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA408248-3125-456F-B301-F96A7FD2F6CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {8203634E-1E22-4A8E-8CE0-F1EC60C31A49}
+		SolutionGuid = {ABD813E8-0166-4ED6-964A-7005BC85DD8D}
 	EndGlobalSection
 EndGlobal
