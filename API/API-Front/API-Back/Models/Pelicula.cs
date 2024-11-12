@@ -21,6 +21,8 @@ public partial class Pelicula
 
     public int IdGenero { get; set; }
 
+    public bool? EstaActiva { get; set; }
+
     public virtual Genero IdGeneroNavigation { get; set; }
 
     public virtual ICollection<PeliculasXcartelera> PeliculasXcarteleras { get; set; } = new List<PeliculasXcartelera>();

@@ -269,6 +269,7 @@ public partial class CineDBContext : DbContext
 
             entity.Property(e => e.IdPelicula).HasColumnName("idPelicula");
             entity.Property(e => e.DuracionMinutos).HasColumnName("duracionMinutos");
+            entity.Property(e => e.EstaActiva).HasColumnName("estaActiva");
             entity.Property(e => e.FechaEstreno).HasColumnName("fechaEstreno");
             entity.Property(e => e.IdGenero).HasColumnName("idGenero");
             entity.Property(e => e.Nombre)
