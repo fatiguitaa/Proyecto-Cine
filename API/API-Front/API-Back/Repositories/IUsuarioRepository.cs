@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_Back.Repositories
 {
-    public interface IClienteRepository
+    public interface IUsuarioRepository
     {
         Usuario? GetByMail(string Email);
         Usuario? Login(string Email, string password);

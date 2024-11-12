@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace API_Back.Repositories
 {
-    public class ClienteRepository : IClienteRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private CineDBContext _context;
 
-        public ClienteRepository(CineDBContext context)
+        public UsuarioRepository(CineDBContext context)
         {
             _context = context;
         }

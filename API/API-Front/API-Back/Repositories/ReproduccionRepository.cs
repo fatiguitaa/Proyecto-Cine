@@ -29,5 +29,10 @@ namespace API_Back.Repositories
             }
             return _context.SaveChanges() == 1;
         }
+
+        public List<Reproduccione> GetToDate(DateTime fecha)
+        {
+            return _context.Reproducciones.Where(X => X.HorarioInicio < fecha).ToList();
+        }
     }
 }

@@ -12,5 +12,7 @@ namespace API_Back.Repositories
         List<Reproduccione> GetAll();
 
         bool OcuparAsiento(int idAsiento, int idReproduccion);
+
+        List<Reproduccione> GetToDate(DateTime fecha);
     }
 }
