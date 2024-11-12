@@ -10,7 +10,7 @@ namespace API_Front.Controllers
     [ApiController]
     public class PeliculaController : ControllerBase
     {
-        IPeliculaRepository _repository;
+        private IPeliculaRepository _repository;
         public PeliculaController(IPeliculaRepository repository)
         {
             _repository = repository;
@@ -23,9 +23,9 @@ namespace API_Front.Controllers
             {
                 return Ok(_repository.GetAll());
             }
-            catch
+            catch(Exception ex)
             {
-                return StatusCode(500,"Error interno");
+                return StatusCode(500,"Error interno "+ex);
             }
         }
         [HttpGet("id")]
