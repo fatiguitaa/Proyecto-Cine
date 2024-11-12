@@ -39,7 +39,6 @@ const mostrarError = function (mensaje) {
 $(".login__panel__enviar").addEventListener("click", evento => {
     evento.preventDefault()
 
-
     const email = $(".login__panel__email").value
 
     if (!validarEmail(email)) {
@@ -47,20 +46,22 @@ $(".login__panel__enviar").addEventListener("click", evento => {
         return
     }
 
-    const contrasena = $(".login__panel__contrasena__input").value
+    const contrasena = $(".login__panel__contrasena").value
     const contrasenaInvalid = validarContrasena(contrasena)
 
     if (contrasenaInvalid) {
         mostrarError(contrasenaInvalid)
         return
     }
+
+    window.location.href = "../panel.html"
 })
 
-$(".login__panel__contrasena__visibilidad").addEventListener("click", evento => {
+$(".login__panel__visibilidad").addEventListener("click", evento => {
     evento.preventDefault()
 
-    $(".login__panel__contrasena__visibilidad").classList.toggle("mostrar")
+    $(".login__panel__visibilidad").classList.toggle("mostrar")
 
-    if($(".login__panel__contrasena__input").type === "password") $(".login__panel__contrasena__input").type = "text" 
-    else $(".login__panel__contrasena__input").type = "password"
+    if ($(".login__panel__contrasena").type === "password") $(".login__panel__contrasena").type = "text" 
+    else $(".login__panel__contrasena").type = "password"
 })
