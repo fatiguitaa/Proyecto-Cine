@@ -28,7 +28,7 @@ namespace API_Front.Controllers
                 return StatusCode(500,"Error interno "+ex);
             }
         }
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
             try
