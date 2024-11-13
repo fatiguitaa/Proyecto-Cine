@@ -28,6 +28,19 @@ namespace API_Front.Controllers
             }
         }
 
+        [HttpGet("Cartelera")]
+        public IActionResult GetByCartelera(int idCartelera, int idPelicula)
+        {
+            try
+            {
+                return Ok(_repository.GetByCartelera(idCartelera, idPelicula));
+            }
+            catch
+            {
+                return StatusCode(500, "error interno");
+            }
+        }
+
         [HttpPost("asiento")]
         public IActionResult Update(int idAsiento, int idReproduccion)
         {

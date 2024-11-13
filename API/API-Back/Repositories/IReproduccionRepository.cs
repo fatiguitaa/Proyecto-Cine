@@ -14,5 +14,7 @@ namespace API_Back.Repositories
         bool OcuparAsiento(int idAsiento, int idReproduccion);
 
         List<Reproduccion> GetToDate(DateTime fecha);
+
+        List<Reproduccion>? GetByCartelera(int idCartelera,int idPelicula);
     }
 }

@@ -29,10 +29,20 @@ namespace API_Back.Repositories
             }
             return _context.SaveChanges() == 1;
         }
+        public List<Reproduccion>? GetByCartelera(int idCartelera, int idPelicula)
+        {
+            Cartelera? oCartelera = _context.Carteleras.Find(idCartelera);
+            if (oCartelera != null)
+            {
+                return _context.Reproducciones.Where(R => R.HorarioInicio > oCartelera.FechaInicio && R.HorarioInicio < oCartelera.FechaFin && R.IdPelicula == idPelicula).ToList();
+            }
+            return null;
+
+        }
 
         public List<Reproduccion> GetToDate(DateTime fecha)
         {
-            return _context.Reproducciones.Where(X => X.HorarioInicio < fecha).ToList();
+            return _context.Reproducciones.Where(X => X.HorarioInicio > fecha).ToList();
         }
     }
 }
