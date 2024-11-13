@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<CineDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionDefault")));
 builder.Services.AddScoped<IPeliculaRepository, PeliculaRepository>();
+builder.Services.AddScoped<ISalaRepository, SalaRepository>();
 builder.Services.AddScoped<ICarteleraRepository, CarteleraRepository>();
 builder.Services.AddScoped<IReproduccionRepository, ReproduccionRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
