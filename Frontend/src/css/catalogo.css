@@ -1,0 +1,27 @@
+.catalogo {
+    background-color: #0e0d0d;
+}
+
+.catalogo__titulo {
+    margin-top: 10rem;
+    text-align: center;
+    font-size: 5rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+.catalogo__peliculas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    justify-items: center;
+    padding: 5rem;
+
+    @media (min-width: 768px) and (max-width: 1627px) {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    @media (min-width: 1628px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

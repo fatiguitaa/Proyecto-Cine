@@ -54,7 +54,7 @@ $(".login__panel__enviar").addEventListener("click", evento => {
         return
     }
 
-    window.location.href = "../panel.html"
+    window.location.href = "../inicio.html"
 })
 
 $(".login__panel__visibilidad").addEventListener("click", evento => {

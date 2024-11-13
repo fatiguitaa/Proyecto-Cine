@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/boostrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/utils/variables.css">
+    <link rel="stylesheet" href="./src/css/globales.css">
+    <link rel="stylesheet" href="./src/css/navbar.css">
+    <link rel="stylesheet" href="./src/css/inicio.css">
+
+    <title>Cine G1 - Inicio</title>
+</head>
+<body class="cargando">
+
+    <div class="carga d-flex justify-content-center align-items-center">
+        <div class="carga__icono"></div>
+    </div>
+
+    <header class="header">
+        <nav>
+            <div class="wrapper">            
+              <div class="logo"><a href="./inicio.html">Grupo 1</a></div>
+              <input type="radio" name="slider" id="menu-btn">
+              <input type="radio" name="slider" id="close-btn">
+              <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn">pija</label>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Feedback</a></li>
+              </ul>
+              <label for="menu-btn" class="btn menu-btn">pija</label>
+
+            </div>
+          </nav>
+    </header>
+
+    <section class="video">
+        <h1 class="video__titulo d-flex align-items-center justify-content-center">Tu mejor&nbsp<span>experiencia</span></h1>
+
+        <video src="./src/video/cine.mp4" autoplay muted loop></video>
+    </section>
+
+    <section class="previsualizacion d-flex align-items-center flex-column">
+        <h2 class="previsualizacion__titulo text-align-center">Nuestro catálogo</h1>
+        <div class="previsualizacion__peliculas"></div>
+        <a href="./catalogo.html"><button class="previsualizacion__ver boton">Ver todas</button></a>
+    </section>
+    
+    <script src="./src/js/boostrap/bootstrap.min"></script>
+    <script src="./src/js/utils/domUtils.js"></script>
+    <script src="./src/js/entrada.js"></script>
+    <script src="./src/js/catalogo.js"></script>
+    <script src="./src/js/inicio.js"></script>
+</body>
+</html>

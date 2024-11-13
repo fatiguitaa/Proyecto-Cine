@@ -1,3 +1,5 @@
+"use strict";
+
 window.addEventListener("load", () => {
     $("body").classList.remove("cargando")
 

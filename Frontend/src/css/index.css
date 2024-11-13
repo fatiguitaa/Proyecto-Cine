@@ -6,20 +6,23 @@ body {
 }
 
 .login {
-    color: var(--negro);
-    background-color: var(--blanco);
+    color: var(--blanco);
+    background-color: #313131;
     border-radius: 5px;
     max-width: 32rem;
     padding: 5rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-/* .login__panel__contrasena {
-    width: auto;
-} */
+.login__titulo {
+    margin-bottom: 3rem;
+}
+
+.login__panel__contrasena {
+    width: 17.5rem;
+}
 
 .login__panel__visibilidad {
-    max-width: .5rem;
     height: 2rem;
     background-position: center;
     margin-left: .5rem;
@@ -36,8 +39,8 @@ body {
 }
 
 .login__error:not(:empty) {
-    background-color: #fce4e4;
-    border: 1px solid #fcc2c3;
+    background-color: #fcc2c3;
+    border: 1px solid #fce4e4;
     float: left;
     padding: .5rem;
     margin-top: 1rem;
