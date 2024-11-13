@@ -15,6 +15,6 @@ namespace API_Back.Repositories
 
         List<Reproduccion> GetToDate(DateTime fecha);
 
-        List<Reproduccion>? GetByCartelera(int idCartelera,int idPelicula);
+        List<Reproduccion>? GetByCartelera(int idCartelera,int idPelicula,bool Finalizadas);
     }
 }

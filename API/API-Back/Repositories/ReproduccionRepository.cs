@@ -29,12 +29,17 @@ namespace API_Back.Repositories
             }
             return _context.SaveChanges() == 1;
         }
-        public List<Reproduccion>? GetByCartelera(int idCartelera, int idPelicula)
+        public List<Reproduccion>? GetByCartelera(int idCartelera, int idPelicula,bool Finalizadas)
         {
             Cartelera? oCartelera = _context.Carteleras.Find(idCartelera);
             if (oCartelera != null)
             {
-                return _context.Reproducciones.Where(R => R.HorarioInicio > oCartelera.FechaInicio && R.HorarioInicio < oCartelera.FechaFin && R.IdPelicula == idPelicula).ToList();
+                var Temp=_context.Reproducciones.Where(R => R.HorarioInicio > oCartelera.FechaInicio && R.HorarioInicio < oCartelera.FechaFin && R.IdPelicula == idPelicula);
+                if (!Finalizadas)
+                {
+                     Temp = Temp.Where(R => R.HorarioInicio > DateTime.Now);
+                }
+                return Temp.ToList();
             }
             return null;
 
