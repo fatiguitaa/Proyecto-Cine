@@ -47,7 +47,7 @@ namespace API_Front.Controllers
             {
                 return Ok(_repository.GetByIdUsuario(idUsuario));
             }
-            catch ()
+            catch 
             {
 
                 return StatusCode(500, "error interno");
