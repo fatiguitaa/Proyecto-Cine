@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace API_Back.Models;
 
-public partial class Reproduccione
+public partial class Reproduccion
 {
     public int IdReproduccion { get; set; }
 

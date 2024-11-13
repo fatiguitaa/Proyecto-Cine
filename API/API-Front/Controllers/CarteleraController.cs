@@ -15,7 +15,7 @@ namespace API_Front.Controllers
         {
             _repository = carteleraRepository;
         }
-        [HttpGet("desdefecha")]
+        [HttpGet("{fecha}")]
         public IActionResult CartelerasDesdeFecha(DateTime fecha)
         {
             try

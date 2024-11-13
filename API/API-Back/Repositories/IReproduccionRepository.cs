@@ -9,10 +9,10 @@ namespace API_Back.Repositories
 {
     public interface IReproduccionRepository
     {
-        List<Reproduccione> GetAll();
+        List<Reproduccion> GetAll();
 
         bool OcuparAsiento(int idAsiento, int idReproduccion);
 
-        List<Reproduccione> GetToDate(DateTime fecha);
+        List<Reproduccion> GetToDate(DateTime fecha);
     }
 }

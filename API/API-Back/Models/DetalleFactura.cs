@@ -25,5 +25,5 @@ public partial class DetalleFactura
 
     public virtual Promocione IdPromocionNavigation { get; set; }
 
-    public virtual Reproduccione IdReproduccionNavigation { get; set; }
+    public virtual Reproduccion IdReproduccionNavigation { get; set; }
 }

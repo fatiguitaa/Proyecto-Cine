@@ -15,7 +15,7 @@ namespace API_Back.Repositories
         {
             _context = context;
         }
-        public List<Reproduccione> GetAll()
+        public List<Reproduccion> GetAll()
         {
             return _context.Reproducciones.ToList();
         }
@@ -30,7 +30,7 @@ namespace API_Back.Repositories
             return _context.SaveChanges() == 1;
         }
 
-        public List<Reproduccione> GetToDate(DateTime fecha)
+        public List<Reproduccion> GetToDate(DateTime fecha)
         {
             return _context.Reproducciones.Where(X => X.HorarioInicio < fecha).ToList();
         }

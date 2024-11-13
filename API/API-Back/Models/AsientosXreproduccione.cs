@@ -17,5 +17,5 @@ public partial class AsientosXreproduccione
 
     public virtual Asiento IdAsientoNavigation { get; set; }
 
-    public virtual Reproduccione IdReproduccionNavigation { get; set; }
+    public virtual Reproduccion IdReproduccionNavigation { get; set; }
 }

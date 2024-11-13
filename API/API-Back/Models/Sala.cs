@@ -15,7 +15,7 @@ public partial class Sala
 
     public virtual TiposSala IdTipoSalaNavigation { get; set; }
 
-    public virtual ICollection<Reproduccione> Reproducciones { get; set; } = new List<Reproduccione>();
+    public virtual ICollection<Reproduccion> Reproducciones { get; set; } = new List<Reproduccion>();
 
     public virtual ICollection<SalasXempleado> SalasXempleados { get; set; } = new List<SalasXempleado>();
 }

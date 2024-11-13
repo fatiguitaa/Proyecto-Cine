@@ -17,7 +17,7 @@ namespace API_Back.Repositories
         }
         public List<Cartelera> GetAllByFecha(DateTime Fecha)
         {
-            return _context.Carteleras.Where(C => C.FechaFin >= Fecha).ToList();
+            return _context.Carteleras.Where(C => C.FechaFin >= Fecha).OrderBy(C => C.FechaInicio).ToList();
         }
     }
 }

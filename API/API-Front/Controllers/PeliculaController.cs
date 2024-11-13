@@ -41,7 +41,7 @@ namespace API_Front.Controllers
             }
         }
 
-        [HttpGet("idCartelera")]
+        [HttpGet("Cartelera/{idCartelera}")]
         public IActionResult GetByCartelera(int idCartelera) 
         {
             try

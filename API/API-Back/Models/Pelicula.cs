@@ -29,5 +29,5 @@ public partial class Pelicula
 
     public virtual ICollection<PeliculasXidioma> PeliculasXidiomas { get; set; } = new List<PeliculasXidioma>();
 
-    public virtual ICollection<Reproduccione> Reproducciones { get; set; } = new List<Reproduccione>();
+    public virtual ICollection<Reproduccion> Reproducciones { get; set; } = new List<Reproduccion>();
 }

@@ -43,7 +43,7 @@ public partial class CineDBContext : DbContext
 
     public virtual DbSet<Promocione> Promociones { get; set; }
 
-    public virtual DbSet<Reproduccione> Reproducciones { get; set; }
+    public virtual DbSet<Reproduccion> Reproducciones { get; set; }
 
     public virtual DbSet<Sala> Salas { get; set; }
 
@@ -351,7 +351,7 @@ public partial class CineDBContext : DbContext
                 .HasColumnName("nombre");
         });
 
-        modelBuilder.Entity<Reproduccione>(entity =>
+        modelBuilder.Entity<Reproduccion>(entity =>
         {
             entity.HasKey(e => e.IdReproduccion).HasName("pkReproducciones");
 
