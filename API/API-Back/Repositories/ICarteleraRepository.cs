@@ -9,6 +9,6 @@ namespace API_Back.Repositories
 {
     public interface ICarteleraRepository
     {
-        List<Cartelera> GetAllByFecha(DateOnly Fecha);
+        List<Cartelera> GetAllByFecha(DateTime Fecha);
     }
 }

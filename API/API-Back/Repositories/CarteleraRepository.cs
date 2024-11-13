@@ -15,7 +15,7 @@ namespace API_Back.Repositories
         {
             _context = context;
         }
-        public List<Cartelera> GetAllByFecha(DateOnly Fecha)
+        public List<Cartelera> GetAllByFecha(DateTime Fecha)
         {
             return _context.Carteleras.Where(C => C.FechaFin >= Fecha).ToList();
         }

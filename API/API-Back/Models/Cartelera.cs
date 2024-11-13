@@ -9,9 +9,9 @@ public partial class Cartelera
 {
     public int IdCartelera { get; set; }
 
-    public DateOnly FechaInicio { get; set; }
+    public DateTime FechaInicio { get; set; }
 
-    public DateOnly FechaFin { get; set; }
+    public DateTime FechaFin { get; set; }
 
     public virtual ICollection<PeliculasXcartelera> PeliculasXcarteleras { get; set; } = new List<PeliculasXcartelera>();
 }

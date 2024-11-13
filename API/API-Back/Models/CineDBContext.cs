@@ -108,8 +108,12 @@ public partial class CineDBContext : DbContext
             entity.HasKey(e => e.IdCartelera).HasName("pkCarteleras");
 
             entity.Property(e => e.IdCartelera).HasColumnName("idCartelera");
-            entity.Property(e => e.FechaFin).HasColumnName("fechaFin");
-            entity.Property(e => e.FechaInicio).HasColumnName("fechaInicio");
+            entity.Property(e => e.FechaFin)
+                .HasColumnType("datetime")
+                .HasColumnName("fechaFin");
+            entity.Property(e => e.FechaInicio)
+                .HasColumnType("datetime")
+                .HasColumnName("fechaInicio");
         });
 
         modelBuilder.Entity<Cliente>(entity =>

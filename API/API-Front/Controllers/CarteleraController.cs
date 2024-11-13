@@ -10,13 +10,13 @@ namespace API_Front.Controllers
     [ApiController]
     public class CarteleraController : ControllerBase
     {
-        ICarteleraRepository _repository;
+        private ICarteleraRepository _repository;
         public CarteleraController(ICarteleraRepository carteleraRepository)
         {
             _repository = carteleraRepository;
         }
         [HttpGet("desdefecha")]
-        public IActionResult CartelerasDesdeFecha(DateOnly fecha)
+        public IActionResult CartelerasDesdeFecha(DateTime fecha)
         {
             try
             {
