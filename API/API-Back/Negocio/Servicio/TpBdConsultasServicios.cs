@@ -12,9 +12,29 @@ namespace API_Back.Negocio.Servicio
     {
         TPbdConsultasDAO consultasBD=new TPbdConsultasDAO();
 
+        public DataTable Consulta1(DateOnly fechaInicio,DateOnly fechaFin)
+        {
+            return consultasBD.Consulta1(fechaInicio, fechaFin);
+        }
+
         public DataTable Consulta2(int duracion)
         {
             return consultasBD.Consulta2(duracion);
+        }
+
+        public DataTable Consulta3(int idPelicula, bool asientosLibres)
+        {
+            return consultasBD.Consulta3(idPelicula, asientosLibres);
+        }
+
+        public DataTable Consulta4(bool mostrarEmpleadosQueYaestuvieronEnReproduccion)
+        {
+            return consultasBD.Consulta4(mostrarEmpleadosQueYaestuvieronEnReproduccion);
+        }
+
+        public DataTable Consulta5(decimal montoMinimo)
+        {
+            return consultasBD.Consulta5(montoMinimo);
         }
     }
 }

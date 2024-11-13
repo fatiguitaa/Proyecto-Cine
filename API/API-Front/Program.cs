@@ -11,6 +11,8 @@ builder.Services.AddScoped<ISalaRepository, SalaRepository>();
 builder.Services.AddScoped<ICarteleraRepository, CarteleraRepository>();
 builder.Services.AddScoped<IReproduccionRepository, ReproduccionRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+//builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+//builder.Services.AddScoped<IEmpleadosRepository, EmpleadosRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

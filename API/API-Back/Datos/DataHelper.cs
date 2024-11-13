@@ -29,12 +29,27 @@ namespace API_Back.Datos
             }
             return _instancia;
         }
+
+        private void abrirConexion()
+        {
+            try
+            {
+                _connection.Open();
+            }
+            catch
+            {
+                _connection.Close();
+                _connection.Open();
+            }
+        }
+
         public DataTable ExecuteSPQuery(string SP, List<ParametroSQL>? parametros)
         {
             DataTable tabla = new DataTable();
             try
             {
-                _connection.Open();
+
+                abrirConexion();
                 var cmd = new SqlCommand(SP, _connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (parametros != null)
@@ -58,7 +73,7 @@ namespace API_Back.Datos
             int rows;
             try
             {
-                _connection.Open();
+                abrirConexion();
                 var cmd = new SqlCommand(SP, _connection);
                 cmd.CommandType = CommandType.StoredProcedure;
                 if (parametros != null)
