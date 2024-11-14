@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     accionBtn.addEventListener('click', async function accionBoton () {
         const queryValue = select.value;  
-       
+       error.textContent='';
         let value = boolConsulta.checked ? "true" : "false";
         if (!queryValue) {
            
@@ -136,15 +136,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
+           let data, response;
             if (queryValue==2)
             {
-                const response = await fetch(`https://localhost:7220/api/TpBd/consulta2?duracionMin=${inputConsulta.value}`);
+                 response = await fetch(`https://localhost:7220/api/TpBd/consulta2?duracionMin=${inputConsulta.value}`);
             
                 if (!response.ok) {
                     throw new Error('Error al obtener los datos');
                 }
     
-                const data = await response.json();
+                 data = await response.json();
                  
                 tableBody.innerHTML = '';
                 thead.innerHTML = '';
@@ -181,13 +182,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             else if (queryValue==1)
             {
-                const response = await fetch(`https://localhost:7220/api/TpBd/consulta1?fechaInicio=${fechaini.value}&fehchaFin=${fechafin.value}`);
+                 response = await fetch(`https://localhost:7220/api/TpBd/consulta1?fechaInicio=${fechaini.value}&fehchaFin=${fechafin.value}`);
             
                 if (!response.ok) {
                     throw new Error('Error al obtener los datos');
                 }
     
-                const data = await response.json();
+                 data = await response.json();
                  
                 tableBody.innerHTML = '';
                 thead.innerHTML = '';
@@ -219,13 +220,13 @@ document.addEventListener("DOMContentLoaded", function () {
             
             else if (queryValue==3)
                 {
-                    const response = await fetch(`https://localhost:7220/api/TpBd/consulta3?idPelicula=${inputConsulta.value}&asientosLibres=${value}`);
+                     response = await fetch(`https://localhost:7220/api/TpBd/consulta3?idPelicula=${inputConsulta.value}&asientosLibres=${value}`);
                     console.log('Valor de la consulta:', value);
                     if (!response.ok) {
                         throw new Error('Error al obtener los datos');
                     }
         
-                    const data = await response.json();
+                     data = await response.json();
                      
                     tableBody.innerHTML = '';
                     thead.innerHTML = '';
@@ -261,13 +262,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 else if (queryValue==4)
                     {
                         console.log('Valor de la consulta:', value);
-                        const response = await fetch(`https://localhost:7220/api/TpBd/consulta4?mostrarEmpleadosQueYaestuvieronEnReproduccion=${value}`);
+                         response = await fetch(`https://localhost:7220/api/TpBd/consulta4?mostrarEmpleadosQueYaestuvieronEnReproduccion=${value}`);
                         
                         if (!response.ok) {
                             throw new Error('Error al obtener los datos');
                         }
             
-                        const data = await response.json();
+                         data = await response.json();
                         console.log('Datos recibidos:', data);
                         tableBody.innerHTML = '';
                         thead.innerHTML = '';
@@ -301,13 +302,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     else if (queryValue==5)
                         {
-                            const response = await fetch(`https://localhost:7220/api/TpBd/Consulta5?montoMinimo=${inputConsulta.value}`);
+                             response = await fetch(`https://localhost:7220/api/TpBd/Consulta5?montoMinimo=${inputConsulta.value}`);
                         
                             if (!response.ok) {
                                 throw new Error('Error al obtener los datos');
                             }
                 
-                            const data = await response.json();
+                             data = await response.json();
                              
                             tableBody.innerHTML = '';
                             thead.innerHTML = '';
@@ -338,8 +339,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             
                             dataTable.style.display = 'table';
                         }
-                        else if (data == null)
-                        {
+                        console.log(data);
+                         if (data.length === 0) {
+                        
                             error.textContent = 'No se encontro ningun resultado';  
                             error.display='block';
                             tableBody.innerHTML = '';
@@ -349,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (a) {
             console.error(a);
             
-            error.textContent = 'No se pueden obtener los datos';  
+            error.textContent = 'No hay datos';  
             error.display='block';
             tableBody.innerHTML = '';
             thead.innerHTML = '';
