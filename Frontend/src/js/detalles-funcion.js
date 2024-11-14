@@ -1,3 +1,5 @@
+var CantidadDetalles = 0;
+
 const cargarAsientos = async function () {
     const urlParams = new URLSearchParams(window.location.search);
 
@@ -8,7 +10,6 @@ const cargarAsientos = async function () {
         window.location.href = "http://localhost:5500/funciones.html"
         return
     }
-
     const matrizAsientos = await fetch(`http://localhost:5141/api/Sala?idSala=${idSala}&idReproduccion=${idReproduccion}`)
     .then (response => response.json())
     
@@ -19,7 +20,7 @@ const cargarAsientos = async function () {
 
             // asiento.setAttribute("name")
             asiento.type = "checkbox"
-            asiento.textContent = columna.name
+            asiento.setAttribute("NombreAsiento",columna.nombre)
             asiento.name = columna.id
             asiento.checked = columna.ocupado
             if (columna.ocupado)
@@ -28,27 +29,31 @@ const cargarAsientos = async function () {
             }
             else
             {
-                const TextoLista = document.createElement("span")
-                TextoLista.textContent=asiento.name
+                const TextoLista = document.createElement("ul")
+                TextoLista.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-check2' viewBox='0 0 16 16'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0'/></svg>"+asiento.getAttribute("NombreAsiento")
                 TextoLista.id="TxT-"+asiento.name
                 asiento.appendChild(TextoLista)
                 asiento.addEventListener('change',(event)=>
                 {
                     if(event.currentTarget.checked)
                     {
-                        $("#B").appendChild(event.currentTarget.firstChild)
+                        $("#Lista-Detalles").appendChild(event.currentTarget.firstChild)
+                        CantidadDetalles++
                     }
                     else
                     {
                         event.currentTarget.appendChild($("#TxT-"+event.currentTarget.name))
+                        CantidadDetalles--
                     }
+                    $("#Cantidad-Detalles").textContent="Cantidad de Asientos: x"+CantidadDetalles
+                    $("#Total-Detalles").textContent="= $"+CantidadDetalles*2000//aca iria algo para buscar el precio de la entrada
                 })
             }
 
             filaAsientos.appendChild(asiento)
         }
 
-        document.getElementById("A").appendChild(filaAsientos)
+        document.getElementById("Tabla-Asientos").appendChild(filaAsientos)
     }
 }
 
