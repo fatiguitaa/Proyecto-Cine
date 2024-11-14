@@ -1,4 +1,4 @@
-﻿using API_Back.Repositories;
+﻿ using API_Back.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,11 +16,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPut("crear")]
-        public IActionResult Crear(string nombre, string apellido, string telefono, int idArea,int idUsuario)
+        public IActionResult Crear(string nombre, string apellido,DateOnly fechaNac, string telefono, int idArea,int idUsuario)
         {
             try
             {
-                return Ok(_repository.Create(nombre,apellido,telefono,idArea,idUsuario));
+                return Ok(_repository.Create(nombre,apellido, fechaNac,telefono,idArea,idUsuario));
             }
             catch {
                 return StatusCode(500, "error interno");
@@ -55,11 +55,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(string nombre, string apellido, string telefono, int idArea, int idUsuario)
+        public IActionResult Update(string nombre, string apellido,DateOnly FechaNac, string telefono, int idArea, int idUsuario)
         {
             try
             {
-                return Ok(_repository.Update(nombre, apellido,telefono,idArea,idUsuario));
+                return Ok(_repository.Update(nombre, apellido,FechaNac,telefono,idArea,idUsuario));
             }
             catch
             {

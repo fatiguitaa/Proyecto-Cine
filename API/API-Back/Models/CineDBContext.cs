@@ -126,7 +126,7 @@ public partial class CineDBContext : DbContext
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("apellido");
-            entity.Property(e => e.Edad).HasColumnName("edad");
+            entity.Property(e => e.FechaNac).HasColumnName("fechaNac");
             entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
             entity.Property(e => e.Nombre)
                 .IsRequired()
@@ -146,6 +146,8 @@ public partial class CineDBContext : DbContext
         modelBuilder.Entity<DetalleFactura>(entity =>
         {
             entity.HasKey(e => e.IdDetalleFacturas).HasName("pkDetalleFacturas");
+
+            entity.ToTable(tb => tb.HasTrigger("T_OcuparAsiento"));
 
             entity.Property(e => e.IdDetalleFacturas).HasColumnName("idDetalleFacturas");
             entity.Property(e => e.IdAsiento).HasColumnName("idAsiento");
@@ -185,6 +187,7 @@ public partial class CineDBContext : DbContext
                 .HasMaxLength(30)
                 .IsUnicode(false)
                 .HasColumnName("apellido");
+            entity.Property(e => e.FechaNac).HasColumnName("fechaNac");
             entity.Property(e => e.IdArea).HasColumnName("idArea");
             entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");
             entity.Property(e => e.Nombre)

@@ -20,9 +20,9 @@ public partial class AsientosXreproduccione
     public virtual Reproduccion IdReproduccionNavigation { get; set; }
 
     public AsientosXreproduccione(int idAsiento, int idReproduccion, bool libre)
-    { 
-        Libre = libre;
-        IdAsiento = idAsiento;
-        IdReproduccion = idReproduccion;
+    {
+        this.IdAsiento = idAsiento;
+        this.IdReproduccion = idReproduccion;
+        this .Libre = libre;
     }
 }

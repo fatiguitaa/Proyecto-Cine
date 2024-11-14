@@ -13,11 +13,11 @@ public partial class Cliente
 
     public string Apellido { get; set; }
 
-    public int Edad { get; set; }
-
     public string Telefono { get; set; }
 
     public int? IdUsuario { get; set; }
+
+    public DateOnly? FechaNac { get; set; }
 
     public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();
 
