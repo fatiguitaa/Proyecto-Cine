@@ -30,7 +30,7 @@ namespace API_Front.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login(string email, string contraseña) 
+        public IActionResult Login([FromBody] string email,[FromBody] string contraseña) 
         {
             try
             {
@@ -43,7 +43,7 @@ namespace API_Front.Controllers
         }
 
         [HttpPost("registrar")]
-        public IActionResult Register(string email, string contraseña)
+        public IActionResult Register([FromBody] string email,[FromBody] string contraseña)
         {
             try
             {
