@@ -56,7 +56,7 @@ namespace API_Front.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update([FromBody] Empleado oEmpleado, string nombre, string apellido,DateOnly FechaNac, string telefono, int idArea, int idUsuario)
+        public IActionResult Update([FromBody] Empleado oEmpleado)
         {
             try
             {

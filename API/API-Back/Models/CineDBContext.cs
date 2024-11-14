@@ -365,6 +365,7 @@ public partial class CineDBContext : DbContext
             entity.Property(e => e.IdIdioma).HasColumnName("idIdioma");
             entity.Property(e => e.IdPelicula).HasColumnName("idPelicula");
             entity.Property(e => e.NumeroSala).HasColumnName("numeroSala");
+            entity.Property(e => e.Precio).HasColumnType("decimal(10, 2)");
 
             entity.HasOne(d => d.IdIdiomaNavigation).WithMany(p => p.Reproducciones)
                 .HasForeignKey(d => d.IdIdioma)

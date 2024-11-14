@@ -18,5 +18,7 @@ namespace API_Back.Repositories
         List<Reproduccion>? GetByCartelera(int idCartelera,int idPelicula,bool Finalizadas);
 
         string? GetNombre(int id);
+
+        Reproduccion? GetById(int id);
     }
 }

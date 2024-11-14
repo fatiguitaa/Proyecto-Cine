@@ -18,7 +18,7 @@ namespace API_Front.Controllers
         }
 
         [HttpPost("Crear")]
-        public IActionResult Crear([FromBody] Cliente oCliente, string nombre, string apellido,DateOnly fechaNac, string? telefono,int? idUsuario)
+        public IActionResult Crear([FromBody] Cliente oCliente)
         {
             try
             {
