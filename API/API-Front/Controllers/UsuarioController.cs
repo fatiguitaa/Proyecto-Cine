@@ -24,7 +24,7 @@ namespace API_Front.Controllers
             return contraEncriptada;
         }
 
-        [HttpGet("email")]
+        [HttpGet("email/{email}")]
         public IActionResult GetEmail(string email)
         {
             try
