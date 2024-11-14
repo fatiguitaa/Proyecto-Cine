@@ -82,12 +82,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 consultaParrafo.textContent = 'Muestra todos los empleados, encasillandolos en sí estuvieron alguna vez en una reproducción o no. Funciona por medio de una vista llamada "EmpleadosEnReproduccion”:';
                 contentDiv.style.display = 'block';              
-                boolConsulta.style.display = 'block';
+                boolConsulta.style.display = 'none';
                 label1.style.display = 'none';
-                label2.style.display = 'none';
-                label3.style.display = 'block';
-                label3.textContent='Empleado en Reproduccion:';
-                inputConsulta.style.display = 'none'; 
+                label3.style.display = 'none';
+                label2.style.display = 'block';
+                label2.textContent='Numero de Sala:';
+                inputConsulta.style.display = 'block';
+                inputConsulta.placeholder="0"; 
                 fechaini.style.display = 'none';
                 fechafin.style.display = 'none';
                
@@ -297,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 else if (queryValue==4)
                     {
                         console.log('Valor de la consulta:', value);
-                         response = await fetch(`https://localhost:7220/api/TpBd/consulta4?mostrarEmpleadosQueYaestuvieronEnReproduccion=${value}`);
+                         response = await fetch(`https://localhost:7220/api/TpBd/consulta4?idSala=${inputConsulta.value}`);
                         
                         if (!response.ok) {
                             throw new Error('Error al obtener los datos');
@@ -312,9 +313,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             {
                             const table = document.createElement('tr');
                             table.innerHTML = `
-                                <th>nombre</th>
-                                <th>apellido</th>
-                                <th>tipo</th>
+                                <th>Asiento</th>
+                                <th>Usos</th>
+                                <th>Porcentaje</th>
                                
                                 
                             `;
@@ -322,9 +323,9 @@ document.addEventListener("DOMContentLoaded", function () {
                             data.forEach(item => {
                             const row = document.createElement('tr');
                             row.innerHTML = `
-                                <td>${item.nombre}</td>
-                                <td>${item.apellido}</td>
-                                <td>${item.tipo}</td>
+                                <td>${item.Asiento}</td>
+                                <td>${item.Usos}</td>
+                                <td>${item.Porcentaje}</td>
                             
                                 
                             `;
