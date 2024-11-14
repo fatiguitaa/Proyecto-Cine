@@ -14,7 +14,10 @@ const cargarAsientos = async function () {
     .then (response => response.json())
     
     for (let fila of matrizAsientos) {
+        const contenedorFila= document.createElement("div")
+        contenedorFila.classList.add("justify-self")
         const filaAsientos = document.createElement("div")
+        filaAsientos.classList.add('d-flex')
         for (let columna of fila) { 
             const asiento = document.createElement("input")
 
@@ -27,22 +30,27 @@ const cargarAsientos = async function () {
             {
                 asiento.disabled=true
             }
-            else
-            {
-                const TextoLista = document.createElement("ul")
-                TextoLista.innerHTML = "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-check2' viewBox='0 0 16 16'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0'/></svg>"+asiento.getAttribute("NombreAsiento")
-                TextoLista.id="TxT-"+asiento.name
-                asiento.appendChild(TextoLista)
+              
+            
+                const label = document.createElement("label")
+                label.classList.add('d-flex','flex-column')
+                label.appendChild(asiento)
+                label.appendChild(document.createTextNode(columna.nombre));
+                label.id="TxT-"+asiento.name
+                filaAsientos.appendChild(label);
+                
                 asiento.addEventListener('change',(event)=>
                 {
+                    console.log(CantidadDetalles)
                     if(event.currentTarget.checked)
                     {
-                        $("#Lista-Detalles").appendChild(event.currentTarget.firstChild)
+                       // $("#Lista-Detalles").appendChild(event.currentTarget.firstChild)
                         CantidadDetalles++
+
                     }
                     else
                     {
-                        event.currentTarget.appendChild($("#TxT-"+event.currentTarget.name))
+                       // event.currentTarget.appendChild($("#TxT-"+event.currentTarget.name))
                         CantidadDetalles--
                     }
                     $("#Cantidad-Detalles").textContent="Cantidad de Asientos: x"+CantidadDetalles
@@ -50,12 +58,12 @@ const cargarAsientos = async function () {
                 })
             }
 
-            filaAsientos.appendChild(asiento)
-        }
+          
+        
 
-        document.getElementById("Tabla-Asientos").appendChild(filaAsientos)
+        document.getElementById("Tabla-Asientos").appendChild(contenedorFila)
+        contenedorFila.appendChild(filaAsientos)
     }
 }
 
 document.addEventListener("DOMContentLoaded", cargarAsientos)
-

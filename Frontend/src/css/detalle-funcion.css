@@ -1,12 +1,57 @@
+body
+{
+    background-color: #313131;
+    color: white;
+}
 
-div {
+    #Tabla-Asientos {
     display: flex;
+    height:  60%;
+    gap: 5px;
     justify-content: center;
     align-items: center;
+    margin: 40px auto;
+        
+    }
+    #Tabla-Asientos label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        color: rgb(233, 231, 231);
+    }
+    .fila-asientos {
+        display: flex;
+        flex-wrap: wrap; 
+        gap: 10px; 
+        margin-bottom: 10px;
+    }
 
-}
+    /* Estilo para los checkboxes */
+    input[type="checkbox"] {
+        width: 30px;  /* Ajusta el tamaño del checkbox */
+        height: 30px; /* Ajusta el tamaño del checkbox */
+        cursor: pointer;
+        align-items: center;
+    }
 
-p {
-    margin: 3rem;
-    background-color: red;
-}
+    /* Estilo para el texto junto al checkbox */
+    label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .Pantalla
+    {
+
+        width: 35rem;
+        height:3rem ;
+        text-align: center;
+        border: 2px solid black;
+        margin-bottom: 20px;
+        background: white;
+        color: black;
+        font-weight: bold;
+    }
