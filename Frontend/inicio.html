@@ -18,32 +18,44 @@
         <div class="carga__icono"></div>
     </div>
 
-    <header class="header">
-        <nav>
-            <div class="wrapper">            
-              <div class="logo"><a href="./inicio.html">Grupo 1</a></div>
-              <input type="radio" name="slider" id="menu-btn">
-              <input type="radio" name="slider" id="close-btn">
-              <ul class="nav-links">
-                <label for="close-btn" class="btn close-btn">pija</label>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Feedback</a></li>
-              </ul>
-              <label for="menu-btn" class="btn menu-btn">pija</label>
+    <nav>
+        <div class="wrapper">            
+          <div class="logo"><a href="./inicio.html">Grupo 1</a></div>
+          <input type="radio" name="slider" id="menu-btn">
+          <input type="radio" name="slider" id="close-btn">
+          <ul class="nav-links">
+            <label for="close-btn" class="btn close-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>                  
+            </label>
+            <li><a href="#" class="actual">Inicio</a></li>
+            <li><a href="./carteleras.html">Carteleras</a></li>
+            <li><a href="./funciones.html">Funciones</a></li>
+            <li><a href="./catalogo.html">Catálogo</a></li>
+            <li><a href="./gestor.html">Gestor</a></li>
 
-            </div>
-          </nav>
-    </header>
+          </ul>
+          <label for="menu-btn" class="btn menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </label>
+
+        </div>
+      </nav>
+
 
     <section class="video">
-        <h1 class="video__titulo d-flex align-items-center justify-content-center">Tu mejor&nbsp<span>experiencia</span></h1>
+      <div class="overlay d-flex justify-content-center align-items-center">
+        <h1 class="overlay__titulo">Tu mejor <span>experiencia</span></h1>
+      </div>  
 
         <video src="./src/video/cine.mp4" autoplay muted loop></video>
     </section>
 
     <section class="previsualizacion d-flex align-items-center flex-column">
-        <h2 class="previsualizacion__titulo text-align-center">Nuestro catálogo</h1>
+        <h2 class="previsualizacion__titulo text-align-center">Películas destacadas</h1>
         <div class="previsualizacion__peliculas"></div>
         <a href="./catalogo.html"><button class="previsualizacion__ver boton">Ver todas</button></a>
     </section>
@@ -51,7 +63,6 @@
     <script src="./src/js/boostrap/bootstrap.min"></script>
     <script src="./src/js/utils/domUtils.js"></script>
     <script src="./src/js/entrada.js"></script>
-    <script src="./src/js/catalogo.js"></script>
     <script src="./src/js/inicio.js"></script>
 </body>
 </html>

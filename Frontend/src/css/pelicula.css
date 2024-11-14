@@ -1,0 +1,27 @@
+body {
+    background-color: #313131;
+    color: var(--blanco);
+}
+
+.contenedor {
+    flex-direction: column;
+    @media (min-width: 768px) { 
+        flex-direction: row;
+    }
+}
+
+.titulo {
+    text-align: center;
+}
+
+.informacion {
+    margin-left: 5rem;
+    max-width: 30rem;
+}
+
+.imagen {
+    width: 40rem;
+    margin-top: 5rem;
+    border-radius: 20px;
+    height: 50rem;
+}

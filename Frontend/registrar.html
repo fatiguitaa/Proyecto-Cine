@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/boostrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/utils/variables.css">
+    <link rel="stylesheet" href="./src/css/globales.css">
+    <link rel="stylesheet" href="./src/css/registrar.css">
+    <title>Cine G1 - Registrar</title>
+</head>
+
+<body class="cargando d-flex justify-content-center align-items-center flex-column vh-100 ">
+
+    <div class="carga d-flex justify-content-center align-items-center">
+        <div class="carga__icono"></div>
+    </div>
+
+    <main class="registrar d-flex flex-column">
+
+        <h1 class="registrar__titulo">¡Encantados de conocerte!</i></h1>
+        
+        <form class="registrar__panel d-flex flex-column">
+
+            <label for="email">E-Mail</label>
+            <input type="email" name="email" class="registrar__panel__email input">
+    
+            <div class="contenedor__contrasenas">
+                <div class="d-flex flex-column">
+                    <label for="contrasena">Contraseña</label>
+
+                    <input type="password" name="contrasena" class="registrar__panel__contrasena input">
+                
+                </div>
+                <button class="registrar__panel__visibilidad boton"></button>
+                
+                <div class="d-flex flex-column">
+                    <label for="contrasenaRepetir">Repetir contraseña</label>
+
+                    <input type="password" name="contrasenaRepetir" class="registrar__panel__repetir input">
+                </div>
+            </div>
+            
+            <label>Nombre</label>
+            <input type="text" class="registrar__panel__nombre input">
+
+            <label>Apellido</label>
+            <input type="text" class="registrar__panel__apellido input">
+
+            <label>Fecha de nacimiento</label>
+            <input type="date" class="registrar__panel__fecha input">
+
+            <label for="">Numero de telefono</label>
+            <input type="number"  min="1" class="registrar__panel__telefono input">
+
+            <input type="submit" value="Ingresar" class="registrar__panel__enviar boton">
+
+        </form>
+
+        <div class="registrar__error"></div>
+    
+        <p class="registrar__login">¿Ya tenés una cuenta? <a href="./index.html" class="registrar__registrarse__link">¡Andá a tu proxima funcion!</a></p>
+    </main>
+
+    <script src="./src/js/boostrap/bootstrap.min.js"></script>
+    <script src="./src/js/utils/domUtils.js"></script>
+    <script src="./src/js/entrada.js"></script>
+    <script src="./src/js/registrar.js"></script>
+</body>
+</html>

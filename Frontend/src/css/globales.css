@@ -126,7 +126,7 @@ ul {
     transform: scale(1.02);
 }
 
-/* Pelicula */
+/* Card pelicula */
 
 .pelicula {
     width: 35rem;
@@ -178,6 +178,7 @@ ul {
 
 .pelicula:hover > .pelicula__info {
     opacity: 1;
+    color: var(--blanco);
 }
 
 .pelicula:hover > .pelicula__imagen {

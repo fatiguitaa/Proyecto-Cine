@@ -1,0 +1,47 @@
+body {
+    background-color: #313131;
+}
+
+.titulo {
+    color: var(--blanco);
+    text-align: center;
+    font-size: 7rem;
+    text-transform: uppercase;
+}
+
+.cartelera {
+    display: grid;
+    background-color: #000;
+
+    grid-template-columns: 1;
+    margin: 5rem;
+    border: 5px solid #000;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+    @media (min-width: 900px) and (max-width: 1627px) {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    @media (min-width: 1628px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.cartelera__fechas {
+    color: var(--blanco);
+    font-size: 5rem;
+    margin: 1rem;
+}
+
+.pelicula__container {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pelicula__container__ver {
+    margin-top: 1rem;
+}

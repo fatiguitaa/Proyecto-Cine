@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./src/css/utils/variables.css">
     <link rel="stylesheet" href="./src/css/globales.css">
     <link rel="stylesheet" href="./src/css/navbar.css">
+    <link rel="stylesheet" href="./src/css/pelicula.css">
 
     <title>Cine G1 - Nombre</title>
 </head>
@@ -27,23 +28,34 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>                  
           </label>
-          <li><a href="./inicio.html" class="actual">Inicio</a></li>
-          <li><a href="./carteleras.html" class="actual">Carteleras</a></li>
-          <li><a href="./funciones.html" class="actual">Funciones</a></li>
-          <li><a href="./catalogo.html" class="actual">Catálogo</a></li>
+          <li><a href="./inicio.html">Inicio</a></li>
+          <li><a href="./carteleras.html">Carteleras</a></li>
+          <li><a href="./funciones.html">Funciones</a></li>
+          <li><a href="./catalogo.html">Catálogo</a></li>
         </ul>
         <label for="menu-btn" class="btn menu-btn">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </label>
-
       </div>
     </nav>
-  
+
+
+    <div class="contenedor d-flex justify-content-center align-items-center">
+      <img class="imagen">
+      <div class="informacion">
+        <h1 class="titulo"></h1>
+
+        <p class="descripcion text-center"></p>
+      </div>
+    </div>
+    
 
     <script src="./src/js/boostrap/bootstrap.min.js"></script>
     <script src="./src/js/utils/domUtils.js"></script>
     <script src="./src/js/entrada.js"></script>
+    <script src="./src/js/pelicula.js"></script>
+
 </body>
 </html>
