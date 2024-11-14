@@ -5,6 +5,7 @@ const cargarAsientos = async function () {
 
     const idSala = urlParams.get('idSala');
     const idReproduccion = urlParams.get('idReproduccion');
+    $("#InputCliente").Value=idReproduccion
 
     if (!idSala || !idReproduccion) {
         window.location.href = "http://localhost:5500/funciones.html"
