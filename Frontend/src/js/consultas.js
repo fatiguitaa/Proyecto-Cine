@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (select.value ==4 )
             {
                 
-                consultaParrafo.textContent = 'Muestra todos los empleados, encasillandolos en sí estuvieron alguna vez en una reproducción o no. Funciona por medio de una vista llamada "EmpleadosEnReproduccion”:';
+                consultaParrafo.textContent = 'Muestra la cantidad de usos de los asientos en una sala especifica y su porcentaje respecto a los demas asientos de la misma:';
                 contentDiv.style.display = 'block';              
                 boolConsulta.style.display = 'none';
                 label1.style.display = 'none';

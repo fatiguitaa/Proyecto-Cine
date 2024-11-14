@@ -12,15 +12,15 @@
 
 
     <script src="./src/js/consultas.js"></script> 
-<script src="./src/js/boostrap/bootstrap.min.js"></script>
-<script src="./src/js/utils/domUtils.js"></script>
-<script src="./src/js/entrada.js"></script>
+    <script src="./src/js/boostrap/bootstrap.min.js"></script>
+    <script src="./src/js/utils/domUtils.js"></script>
+    <script src="./src/js/entrada.js"></script>
 
     <title>Consultas</title>
     
 </head>
 <body class="cargando">
-
+    <header class="header">
         <nav>
             <div class="wrapper">            
               <div class="logo"><a href="./inicio.html">Grupo 1</a></div>
@@ -32,25 +32,29 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                   </svg>                  
                 </label>
-                <li><a href="#">Carteleras</a></li>
-                <li><a href="#">Funciones</a></li>
-                <li><a href="#">Catalogo</a></li>
+                <li><a href="./inicio.html" >Inicio</a></li>
+                <li><a href="./carteleras.html">Carteleras</a></li>
+                <li><a href="./funciones.html">Funciones</a></li>
+                <li><a href="./catalogo.html">Catálogo</a></li>
+                <li><a href="#" class="actual">Consultas</a></li>
+    
               </ul>
               <label for="menu-btn" class="btn menu-btn">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
               </svg>
             </label>
-
+    
             </div>
           </nav>
 
+    </header>
     <br><br><br><br>
     <div class="select-box">
     
         
     <select id="consultaSelect" class="select"  >
-        <option value="" class="label">Seleccione una consulta</option>
+        <option value="" class="label" disabled selected>Seleccione una consulta</option>
         <option value="1" class="label">Consulta 1</option>
         <option value="2" class="label">Consulta 2</option>
         <option value="3" class="label">Consulta 3</option>
