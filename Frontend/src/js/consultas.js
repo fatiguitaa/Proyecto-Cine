@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (select.value ==3 )
             {
                 
-                consultaParrafo.textContent = 'Obtener la sala que tiene el mayor número de asientos en un estado determinado para una reproducción específica:';
+                consultaParrafo.textContent = 'Obtener la funcion que tiene el mayor número de asientos en un estado determinado para una pelicula específica:';
                 contentDiv.style.display = 'block';
                 label1.style.display = 'none';
                 label2.style.display = 'block';
