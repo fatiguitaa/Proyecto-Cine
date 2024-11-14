@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/boostrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./src/css/normalize.css">
+    <link rel="stylesheet" href="./src/css/utils/variables.css">
+    <link rel="stylesheet" href="./src/css/globales.css">
+    <link rel="stylesheet" href="./src/css/navbar.css">
+    <link rel="stylesheet" href="./src/css/consultas.css">
+
+    <title>Consultas</title>
+    
+</head>
+<body class="cargando">
+    <header class="header">
+        <nav>
+            <div class="wrapper">            
+              <div class="logo"><a href="./inicio.html">Grupo 1</a></div>
+              <input type="radio" name="slider" id="menu-btn">
+              <input type="radio" name="slider" id="close-btn">
+              <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
+                </label>
+                <li><a href="#">Carteleras</a></li>
+                <li><a href="#">Funciones</a></li>
+                <li><a href="#">Catalogo</a></li>
+              </ul>
+              <label for="menu-btn" class="btn menu-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </label>
+
+            </div>
+          </nav>
+
+    </header>
+    <br><br><br><br>
+    <div class="select-box">
+    
+        
+    <select id="consultaSelect" class="select" onchange="mostrarContenido()" >
+        <option value="" class="label">Seleccione una consulta</option>
+        <option value="1" class="label">Consulta 1</option>
+        <option value="2" class="label">Consulta 2</option>
+        <option value="3" class="label">Consulta 3</option>
+        <option value="4" class="label">Consulta 4</option>
+        <option value="5" class="label" >Consulta 5</option>
+    </select>
+</div>
+<center>
+    <div id="content" class="parrafo">
+        <p id="consultaParrafo"></p>
+        <center> <input type="date" id="fechaini" class="inputdate">
+        <input type="date" id="fechafin" class="inputdate">
+        <input type="number" id="input" class="input" min="0">
+        
+        <input type="checkbox" id="bool" class="inputnum"></center>
+        <button class="previsualizacion__ver boton" id="accionBtn" onclick="accionBoton() ">Buscar</button>
+        <p id="error"></p>
+    </div>
+
+    <table id="dataTable" border="2px" style="margin: 60px; display: none; border-color: white; color: white; text-align: center;">
+        <thead>
+            
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+</center>
+
+
+
+    <script src="./src/js/entrada.js"></script>
+    <script src="./src/js/consultas.js"></script> 
+<script src="./src/js/boostrap/bootstrap.min.js"></script>
+<script src="./src/js/utils/domUtils.js"></script>
+
+</body>
+</html>
+
+    
+

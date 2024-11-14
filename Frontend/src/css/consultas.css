@@ -1,0 +1,122 @@
+
+#content {
+  display: none;
+  margin-top: 20px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+body {
+  background-color: #0e0d0d;
+  color: #414141;
+  font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+
+.select-box {
+  cursor: pointer;
+  position : relative;
+  max-width:  20em;
+  margin: 5em auto;
+  width: 100%;
+  margin-bottom: 10em;
+}
+
+.select,
+.label {
+  color: white;
+  display: block;
+  font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+
+.select {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  padding: 5px 0;
+  height: 40px;
+  
+ 
+  background: #0e0d0d;
+ 
+ 
+}
+.select-box1 {
+  background: #0e0d0d;
+}
+
+.label {
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.open .label::after {
+   content: "▲";
+}
+.label::after {
+  content: "▼";
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 15px;
+  border-left: 5px solid #0e0d0d;
+}
+
+.parrafo
+{
+margin-top: 10px;
+display: inline-block;
+text-align: center;
+width: fit-content;           
+max-width: 300px; 
+color: whitesmoke;
+border: 2px solid rgb(163, 163, 163);
+border-radius: 14%;
+padding: 20px;
+margin-bottom: 40px;
+}
+
+/* Quitar las flechas de los inputs tipo number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; /* Para Chrome, Safari y Edge */
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Para Firefox */
+  appearance: textfield; /* Para otros navegadores */
+}
+
+.inputnum
+{
+margin: 15px;
+
+}
+.input
+{
+margin: 15px;
+
+}
+#error
+{
+  margin: 10px;
+  color: red;
+  font-size: 14px;
+}
+.inputdate {
+  width: 60%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+  
+}
+
+.inputdate::-webkit-calendar-picker-indicator {
+  color: #333;
+  cursor: pointer;
+}
