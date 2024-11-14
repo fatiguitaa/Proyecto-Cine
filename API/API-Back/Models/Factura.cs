@@ -17,9 +17,9 @@ public partial class Factura
 
     public virtual Cliente IdClienteNavigation { get; set; }
 
-    public Factura(DateTime fecha,int idcliente) 
+    public Factura(DateTime fecha, int idCliente)
     {
         this.Fecha = fecha;
-        this.IdCliente = idcliente;
+        this.IdCliente = idCliente;
     }
 }

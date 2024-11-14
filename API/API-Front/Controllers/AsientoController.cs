@@ -19,17 +19,18 @@ namespace API_Front.Controllers
         [HttpGet("Nombre/{id}")]
         public IActionResult GetNombre(int id)
         {
-            try 
+            try
             {
                 return Ok(_repository.GetNombre(id));
             }
-            catch
+            catch (Exception ex)
             {
-                return StatusCode(500, "error interno");
+                {
+                    return StatusCode(500, "error interno" + ex.Message);
+                }
+
             }
 
         }
-
-        
     }
 }
