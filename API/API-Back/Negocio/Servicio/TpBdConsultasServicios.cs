@@ -27,9 +27,9 @@ namespace API_Back.Negocio.Servicio
             return consultasBD.Consulta3(idPelicula, asientosLibres);
         }
 
-        public DataTable Consulta4(bool mostrarEmpleadosQueYaestuvieronEnReproduccion)
+        public DataTable Consulta4(int idSala)
         {
-            return consultasBD.Consulta4(mostrarEmpleadosQueYaestuvieronEnReproduccion);
+            return consultasBD.Consulta4(idSala);
         }
 
         public DataTable Consulta5(decimal montoMinimo)

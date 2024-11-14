@@ -39,11 +39,11 @@ namespace API_Back.Datos.DAO
             return dt;
         }
         
-        public DataTable Consulta4(bool mostrarEmpleadosQueYaestuvieronEnReproduccion)
+        public DataTable Consulta4(int idSala)
         {
             DataTable dt = new DataTable();
             List<ParametroSQL> listaParametros = new List<ParametroSQL>();
-            listaParametros.Add(new ParametroSQL("@estuvoEnReproduccion", mostrarEmpleadosQueYaestuvieronEnReproduccion));
+            listaParametros.Add(new ParametroSQL("@idsala", idSala));
             dt = DataHelper.GetInstance().ExecuteSPQuery("dbo.consulta4", listaParametros);
             return dt;
         }

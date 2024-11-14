@@ -84,26 +84,18 @@ namespace API_Front.Controllers
         }
 
         [HttpGet("consulta4")]
-        public IActionResult GetEmpleadosEnReproduccion(bool mostrarEmpleadosQueYaestuvieronEnReproduccion)
+        public IActionResult GetEmpleadosEnReproduccion(int idSala)
         {
             try
             {
 
                 DataTable dt = new DataTable();
                 //Console.WriteLine("pene");
-                dt = _repository.Consulta4(mostrarEmpleadosQueYaestuvieronEnReproduccion);
+                dt = _repository.Consulta4(idSala);
                 
                 if (dt == null)
                 {
-                    if (mostrarEmpleadosQueYaestuvieronEnReproduccion)
-                    {
-                        return NotFound("UPS! Parece que ningun empleado estuvo en reproduccion todavia!");
-                    }
-                    else
-                    {
-                        return NotFound("UPS! Parece ser que todos los empleados ya estuvieron en reproduccion.");
-                    }
-                    
+                    return NotFound("UPS! Parece que ningun empleado estuvo en reproduccion todavia!");
                 }
                 //var diccionario = Serealizar.GetDict(dt);
                 var json = JsonConvert.SerializeObject(dt);
