@@ -1,4 +1,5 @@
 ﻿using API_Back.Models;
+using API_Back.Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace API_Back.Repositories
     public interface IUsuarioRepository
     {
         Usuario? GetByMail(string Email);
-        Usuario? Login(string Email, string password);
+        UsuarioLogin? Login(string Email, string password);
         bool Register(Usuario usuario);
 
     }
