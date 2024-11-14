@@ -36,12 +36,12 @@ body
         align-items: center;
     }
 
-    /* Estilo para el texto junto al checkbox */
-    input[type="checkbox"] {
+    input[type="checkbox"] 
+    {
         position: absolute;
-        width: 50px; /* Tamaño que necesitas para cubrir el icono */
+        width: 50px; 
         height: 50px;
-        opacity: 0; /* Hace el checkbox invisible */
+        opacity: 0; 
         cursor: pointer;
     }
 
