@@ -79,5 +79,10 @@ namespace API_Back.Repositories
             }
             return null;
         }
+
+        public Reproduccion? GetById(int id)
+        {
+            return _context.Reproducciones.Find(id);
+        }
     }
 }

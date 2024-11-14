@@ -17,6 +17,8 @@ public partial class Reproduccion
 
     public int IdIdioma { get; set; }
 
+    public decimal? Precio { get; set; }
+
     public virtual ICollection<AsientosXreproduccione> AsientosXreproducciones { get; set; } = new List<AsientosXreproduccione>();
 
     public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; } = new List<DetalleFactura>();

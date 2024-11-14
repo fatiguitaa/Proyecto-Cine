@@ -65,5 +65,17 @@ namespace API_Front.Controllers
                 return StatusCode(500, "error interno");
             }
         }
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            try 
+            {
+                return Ok(_repository.GetById(id));
+            }
+            catch
+            {
+                return StatusCode(500, "error interno");
+            }
+        }
     }
 }
