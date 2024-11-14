@@ -37,10 +37,18 @@ body
     }
 
     /* Estilo para el texto junto al checkbox */
-    label {
-        display: flex;
-        align-items: center;
-        font-size: 14px;
+    input[type="checkbox"] {
+        position: absolute;
+        width: 50px; /* Tamaño que necesitas para cubrir el icono */
+        height: 50px;
+        opacity: 0; /* Hace el checkbox invisible */
+        cursor: pointer;
+    }
+
+    .AsientoIcono {
+        width: 50px; /* Ajusta estos valores según sea necesario */
+        height: 50px;
+        cursor: pointer;
     }
 
     .Pantalla
