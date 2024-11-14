@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const consultaParrafo = document.getElementById('consultaParrafo');
     const accionBtn = document.getElementById('accionBtn');
     const dataTable = document.getElementById('dataTable');
-    const tableBody = dataTable.querySelector('tbody');
     const thead = dataTable.querySelector('thead');
-
+    const tableBody = dataTable.querySelector('tbody');
+    const label1 = document.querySelector('#labelinp1');
+    const label2 = document.querySelector('#labelinp2');
+    const label3 = document.querySelector('#labelinp3');
    
     select.addEventListener('change', function mostrarContenido() {
        
@@ -32,6 +34,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     contentDiv.style.display = 'block';
                     boolConsulta.style.display = 'none';
                     inputConsulta.style.display = 'none';
+                    label1.style.display = 'block';
+                    label2.style.display = 'block';
+                    label1.textContent='Fecha de Inicio:';
+                    label2.textContent='Fecha de Fin:';
                     fechaini.style.display = 'block';
                     fechafin.style.display = 'block';
                     
@@ -42,11 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     
                     consultaParrafo.textContent = 'Mostrar Datos y monto total generado de aquellas peliculas cuya duracion sea mayor a los minutos seleccionados a continuacion:';
                         contentDiv.style.display = 'block';
+                        label1.style.display = 'none';
+                        label2.style.display = 'block';
+                        label2.textContent='Duracion:';
                         inputConsulta.style.display = 'block'; 
                         boolConsulta.style.display = 'none';
                         fechaini.style.display = 'none';
                         fechafin.style.display = 'none';
-                    
+                        inputConsulta.placeholder="0";
                  }
 
             else if (select.value ==3 )
@@ -54,10 +63,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 consultaParrafo.textContent = 'Obtener la sala que tiene el mayor número de asientos libres para una reproducción específica:';
                 contentDiv.style.display = 'block';
+                label1.style.display = 'none';
+                label2.style.display = 'block';
+                label3.style.display = 'block';
+                label2.textContent='ID de la Pelicula:';
+                label3.textContent='Asiento Libre:';
                 inputConsulta.style.display = 'block'; 
                 boolConsulta.style.display = 'block';
                 fechaini.style.display = 'none';
                 fechafin.style.display = 'none';
+                inputConsulta.placeholder="0";
                 
             }
             else if (select.value ==4 )
@@ -66,6 +81,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 consultaParrafo.textContent = 'Muestra todos los empleados, encasillandolos en sí estuvieron alguna vez en una reproducción o no. Funciona por medio de una vista llamada "EmpleadosEnReproduccion”:';
                 contentDiv.style.display = 'block';              
                 boolConsulta.style.display = 'block';
+                label1.style.display = 'none';
+                label2.style.display = 'none';
+                label3.style.display = 'block';
+                label3.textContent='Empleado en Reproduccion:';
                 inputConsulta.style.display = 'none'; 
                 fechaini.style.display = 'none';
                 fechafin.style.display = 'none';
@@ -77,7 +96,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 consultaParrafo.textContent = 'Busca las películas que han sido proyectadas en varios idiomas, la cantidad de reproducciones y el total facturado por película en cada idioma (solo las películas que han generado más de una cierta cantidad de ingresos en total):';
                 contentDiv.style.display = 'block';
+                label1.style.display = 'none';
+                label2.style.display = 'block';
+                label3.style.display = 'none';
+               
+                label2.textContent='Monto Minimo:';
                 inputConsulta.style.display = 'block'; 
+                inputConsulta.placeholder="$0.00";
                 boolConsulta.style.display = 'none';
                 fechaini.style.display = 'none';
                 fechafin.style.display = 'none';
@@ -313,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             
                             dataTable.style.display = 'table';
                         }
-                        if (response == null)
+                        else if (data == null)
                         {
                             error.textContent = 'No se encontro ningun resultado';  
                             error.display='block';

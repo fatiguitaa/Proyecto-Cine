@@ -90,12 +90,13 @@ input[type="number"] {
 
 .inputnum
 {
-margin: 15px;
-
+  margin-top: 1px;
+  margin-bottom: 10px;
 }
 .input
 {
-margin: 15px;
+  margin-top: 1px;
+  margin-bottom: 10px;
 
 }
 #error
@@ -113,10 +114,18 @@ margin: 15px;
   color: #333;
   background-color: #f9f9f9;
   margin-bottom: 10px;
+
   
 }
 
 .inputdate::-webkit-calendar-picker-indicator {
   color: #333;
   cursor: pointer;
+}
+
+.labelinp
+{
+margin: 1px;
+display: flex;
+
 }
