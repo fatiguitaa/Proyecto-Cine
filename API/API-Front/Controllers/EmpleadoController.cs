@@ -1,4 +1,5 @@
-﻿ using API_Back.Repositories;
+﻿using API_Back.Models;
+using API_Back.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -16,11 +17,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPut("crear")]
-        public IActionResult Crear(string nombre, string apellido,DateOnly fechaNac, string telefono, int idArea,int idUsuario)
+        public IActionResult Crear([FromBody] Empleado oEmpleado)
         {
             try
             {
-                return Ok(_repository.Create(nombre,apellido, fechaNac,telefono,idArea,idUsuario));
+                return Ok(_repository.Create(oEmpleado.Nombre,oEmpleado.Apellido, oEmpleado.FechaNac,oEmpleado.Telefono,oEmpleado.IdArea,oEmpleado.IdUsuario));
             }
             catch {
                 return StatusCode(500, "error interno");
@@ -55,11 +56,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(string nombre, string apellido,DateOnly FechaNac, string telefono, int idArea, int idUsuario)
+        public IActionResult Update([FromBody] Empleado oEmpleado, string nombre, string apellido,DateOnly FechaNac, string telefono, int idArea, int idUsuario)
         {
             try
             {
-                return Ok(_repository.Update(nombre, apellido,FechaNac,telefono,idArea,idUsuario));
+                return Ok(_repository.Update(oEmpleado.Nombre, oEmpleado.Apellido,oEmpleado.FechaNac,oEmpleado.Telefono,oEmpleado.IdArea,oEmpleado.IdUsuario));
             }
             catch
             {

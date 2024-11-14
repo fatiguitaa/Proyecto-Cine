@@ -15,7 +15,7 @@ namespace API_Back.Repositories
             _context = context;
         }
 
-        public bool Create(string nombre, string apellido,DateOnly FechaNac, string telefono, int idArea, int? idUsuario)
+        public bool Create(string nombre, string apellido,DateOnly? FechaNac, string telefono, int idArea, int? idUsuario)
         {
             Empleado empleado = new Empleado();
             empleado.Nombre = nombre;
@@ -37,7 +37,7 @@ namespace API_Back.Repositories
             return _context.Empleados.Where(X=> X.IdUsuario==idUsuario).FirstOrDefault();
         }
 
-        public bool Update(string nombre, string apellido, DateOnly FechaNac, string telefono, int idArea, int? idUsuario)
+        public bool Update(string nombre, string apellido, DateOnly? FechaNac, string telefono, int idArea, int? idUsuario)
         {
             Empleado? empleado = _context.Empleados.Where(X=>X.IdUsuario==idUsuario).FirstOrDefault();
             if (empleado != null)

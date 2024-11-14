@@ -9,9 +9,9 @@ namespace API_Back.Repositories
 {
     public interface IClienteRepository
     {
-        bool Create(string nombre, string apellido,DateOnly FechaNac, string? telefono, int? idUsuario);
+        bool Create(string nombre, string apellido,DateOnly? FechaNac, string? telefono, int? idUsuario);
         List<Cliente> GetAll();
-        bool Update(string nombre, string apellido,DateOnly FechaNac, string? telefono, int? idUsuario);
+        bool Update(string nombre, string apellido,DateOnly? FechaNac, string? telefono, int? idUsuario);
         Cliente? GetByIdUsuario(int idUsuario);
     }
 }

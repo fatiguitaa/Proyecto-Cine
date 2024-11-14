@@ -19,8 +19,11 @@ namespace API_Back.Repositories
             Factura oFactura = new Factura(Fecha,IdCliente);
             foreach (DetalleFactura oDetalle in Detalles)
             {
+                oDetalle.IdFactura = oFactura.IdFactura;
                 oFactura.DetalleFacturas.Add(oDetalle);
+                _context.DetalleFacturas.Add(oDetalle);
             }
+            _context.Facturas.Add(oFactura);
             return _context.SaveChanges()>0;
             
         }

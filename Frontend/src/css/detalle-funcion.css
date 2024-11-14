@@ -77,14 +77,16 @@ body
     {
         height: 35px;
     }
-    .AsientoIconoOcupado .s0
+
+
+    /*.AsientoIconoOcupado .s0
     {
-        fill: rgb(158, 1, 1);
+        fill: rgb(158, 1, 1,0.8);
         
     }
     .AsientoIconoOcupado .s1
     {
-        fill: rgb(205, 2, 2)
+        fill: rgba(205, 2, 2, 0.8)
     }
     .AsientoIconoSeleccionado .s0
     {
@@ -92,7 +94,37 @@ body
     }
     .AsientoIconoSeleccionado .s1
     {
-        fill: #009c00;
+        fill: rgb(0, 156, 0);
+    }*/
+
+/*====================================*/
+
+    .AsientoIconoLibre .s0
+    {
+        fill: rgb(158, 1, 1,0.8)
     }
+    .AsientoIconoLibre .s1
+    {
+        fill: rgba(205, 2, 2, 0.8)
+    }
+    .AsientoIconoOcupado .s0
+    {
+        fill: rgba(205, 205, 205, 0.5)  ;
+        
+    }
+    .AsientoIconoOcupado .s1
+    {
+        fill: rgb(255, 255, 255,0.5) 
+    }
+    .AsientoIconoSeleccionado .s0
+    {
+        fill: rgb(2, 133, 2)
+    }
+    .AsientoIconoSeleccionado .s1
+    {
+        fill: rgb(0, 156, 0);
+    }
+    
+    
     
     

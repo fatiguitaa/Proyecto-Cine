@@ -30,11 +30,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login(string email, string contraseña) 
+        public IActionResult Login([FromBody] Usuario oUsuario) 
         {
             try
             {
-                return Ok(_repository.Login(email, contraseña));
+                return Ok(_repository.Login(oUsuario.EMail, oUsuario.Contrasenia));
             }
             catch
             {
@@ -43,13 +43,13 @@ namespace API_Front.Controllers
         }
 
         [HttpPost("registrar")]
-        public IActionResult Register(string email, string contraseña)
+        public IActionResult Register([FromBody] Usuario oUsuario)
         {
             try
             {
                 Usuario usuario = new Usuario();
-                usuario.Contrasenia = contraseña;
-                usuario.EMail = email;
+                usuario.Contrasenia = oUsuario.Contrasenia;
+                usuario.EMail = oUsuario.EMail;
                 return Ok(_repository.Register(usuario));
             }
             catch
