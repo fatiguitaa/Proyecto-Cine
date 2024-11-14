@@ -16,4 +16,10 @@ public partial class Factura
     public virtual ICollection<DetalleFactura> DetalleFacturas { get; set; } = new List<DetalleFactura>();
 
     public virtual Cliente IdClienteNavigation { get; set; }
+
+    public Factura(DateTime fecha, int idCliente)
+    {
+        this.Fecha = fecha;
+        this.IdCliente = idCliente;
+    }
 }

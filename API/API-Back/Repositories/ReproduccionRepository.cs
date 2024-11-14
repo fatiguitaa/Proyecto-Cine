@@ -27,6 +27,21 @@ namespace API_Back.Repositories
             {
                 AXR.Libre = false;
             }
+            else
+            {
+                Sala? SalaAsiento = _context.Asientos
+                    .Where(A => A.IdAsiento == idAsiento)
+                    .Select(A => A.IdFilaNavigation)
+                    .Select(F => F.NumeroSalaNavigation)
+                    .FirstOrDefault();
+                Sala? SalaReproduccion = _context.Reproducciones
+                    .Where(R => R.IdReproduccion == idReproduccion)
+                    .Select(R => R.NumeroSalaNavigation)
+                    .FirstOrDefault();
+
+                if (SalaAsiento != null && SalaReproduccion != null && SalaAsiento.NumeroSala == SalaReproduccion.NumeroSala)
+                _context.AsientosXreproducciones.Add(new AsientosXreproduccione(idAsiento, idReproduccion, false));
+            }
             return _context.SaveChanges() == 1;
         }
         public List<Reproduccion>? GetByCartelera(int idCartelera, int idPelicula,bool Finalizadas)
@@ -48,6 +63,21 @@ namespace API_Back.Repositories
         public List<Reproduccion> GetToDate(DateTime fecha)
         {
             return _context.Reproducciones.Where(X => X.HorarioInicio > fecha).ToList();
+        }
+
+        public string? GetNombre(int id)
+        {
+            Reproduccion? oReproduccion = _context.Reproducciones.Find(id);
+            if (oReproduccion != null)
+            {
+                Pelicula? oPelicula = _context.Peliculas.Find(oReproduccion.IdPelicula);
+                Idioma? oIdioma = _context.Idiomas.Find(oReproduccion.IdIdioma);
+                if (oIdioma != null && oPelicula != null)
+                {
+                    return oPelicula.Nombre + " (" + oIdioma.Nombre + ") " + oReproduccion.HorarioInicio;
+                }
+            }
+            return null;
         }
     }
 }

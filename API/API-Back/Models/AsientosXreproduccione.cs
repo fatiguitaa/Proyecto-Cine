@@ -18,4 +18,11 @@ public partial class AsientosXreproduccione
     public virtual Asiento IdAsientoNavigation { get; set; }
 
     public virtual Reproduccion IdReproduccionNavigation { get; set; }
+
+    public AsientosXreproduccione(int idAsiento, int idReproduccion, bool libre)
+    { 
+        Libre = libre;
+        IdAsiento = idAsiento;
+        IdReproduccion = idReproduccion;
+    }
 }

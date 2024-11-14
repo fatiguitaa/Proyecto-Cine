@@ -41,12 +41,24 @@ namespace API_Front.Controllers
             }
         }
 
-        [HttpPost("asiento")]
+        [HttpPost("OcuparAsiento")]
         public IActionResult Update(int idAsiento, int idReproduccion)
         {
             try
             {
                 return Ok(_repository.OcuparAsiento(idAsiento, idReproduccion));
+            }
+            catch
+            {
+                return StatusCode(500, "error interno");
+            }
+        }
+        [HttpGet("Nombre/{id}")]
+        public IActionResult GetNombre(int id) 
+        {
+            try
+            {
+                return Ok(_repository.GetNombre(id));
             }
             catch
             {
