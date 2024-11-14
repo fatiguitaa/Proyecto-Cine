@@ -5,24 +5,29 @@ body {
     backdrop-filter: blur(5px);
 }
 
-.login {
+.registrar {
     color: var(--blanco);
     background-color: #313131;
     border-radius: 5px;
-    max-width: 32rem;
+    width: auto;
     padding: 5rem;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.login__titulo {
+.registrar__titulo {
     margin-bottom: 3rem;
 }
 
-.login__panel__contrasena {
-    width: 17.5rem;
+.registrar__panel__contrasena {
+    margin-right: 8ch;
 }
 
-.login__panel__visibilidad {
+.registrar__panel__repetir {
+    margin: 0;
+}
+
+.registrar__panel__visibilidad {
+    width: 2rem;
     height: 2rem;
     background-position: center;
     margin-left: .5rem;
@@ -34,11 +39,11 @@ body {
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 0 0 1.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.451 10.451 0 0 1 12 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 0 1-4.293 5.774M6.228 6.228 3 3m3.228 3.228 3.65 3.65m7.894 7.894L21 21m-3.228-3.228-3.65-3.65m0 0a3 3 0 1 0-4.243-4.243m4.242 4.242L9.88 9.88" /></svg>');
 }
 
-.login__panel__enviar {
+.registrar__panel__enviar {
     margin-top: 1rem;
 }
 
-.login__error:not(:empty) {
+.registrar__error:not(:empty) {
     background-color: #fcc2c3;
     border: 1px solid #fce4e4;
     float: left;
@@ -49,15 +54,15 @@ body {
     margin-top: 1.5rem;
 }
 
-.login__registrarse {
+.registrar__registrarse {
     font-size: 1.4rem;
     margin-top: 1rem;
 }
 
-.login__registrarse a {
+.registrar__login a {
     color: var(--celeste);
 }
 
-.login__registrarse a:hover {
+.registrar__login a:hover {
     color: var(--azul);
 }
