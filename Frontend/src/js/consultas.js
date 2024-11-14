@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <th>idPelicula</th>
                         <th>nombre</th>      
                         <th>IngresosTotales</th>
-                        <th>Fecha</th>
+                        
                     `;
                     thead.appendChild(table);}
                     data.forEach(item => {
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <td>${item.idPelicula}</td>
                         <td>${item.nombre}</td>
                         <td>${item.ingresosTotales}</td>
-                        <td>${item.Fecha}</td>
+                       
                         
                     `;
                     tableBody.appendChild(row);
