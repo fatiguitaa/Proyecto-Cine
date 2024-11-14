@@ -12,14 +12,11 @@ const cargarAsientos = async function () {
         return
     }
 
-    var precio = await fetch(`http://localhost:5141/api/Reproduccion/${idReproduccion}`).precio
-
+    var precio = (await fetch(`http://localhost:5141/api/Reproduccion/${idReproduccion}`).then(response => response.json())).precio
     $("#InputCliente").value=idReproduccion
     $("#InputPrecio").value=precio
 
 
-
-    
     const matrizAsientos = await fetch(`http://localhost:5141/api/Sala?idSala=${idSala}&idReproduccion=${idReproduccion}`)
     .then (response => response.json())
     
@@ -80,7 +77,7 @@ const cargarAsientos = async function () {
                         event.currentTarget.parentElement.childNodes[2].childNodes[0].classList.add("AsientoIconoLibre")
                     }
                     $("#Cantidad-Detalles").textContent="Cantidad de Asientos: x"+CantidadDetalles
-                    $("#Total-Detalles").textContent="= $"+CantidadDetalles*2000//aca iria algo para buscar el precio de la entrada
+                    $("#Total-Detalles").textContent="= $"+CantidadDetalles*precio//aca iria algo para buscar el precio de la entrada
                 })
             }
 
@@ -92,6 +89,12 @@ const cargarAsientos = async function () {
     }
 }
 
+
+const params = new URL('http://127.0.0.7:5500/patata.html?idcliente=1&precio=7000&idReproduccion=617&idPromocion=0&46=on&49=on&56=on&63=on&68=on&79=on&80=on&82=on').searchParams
+
+const numbersList = Array.from(params.keys()).map(Number)
+numbersList.splice(0,4)
+console.log(numbersList)
 
 
 document.addEventListener("DOMContentLoaded", cargarAsientos)
