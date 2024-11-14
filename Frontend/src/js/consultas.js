@@ -358,6 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <th>Pelicula</th>
                                     <th>Idioma</th>
                                     <th>TotalReproducciones</th>
+                                   <th>IngresoIdioma</th>
                                    <th>IngresoTotal</th>
                                     
                                 `;
@@ -368,6 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                     <td>${item.Pelicula}</td>
                                     <td>${item.Idioma}</td>
                                     <td>${item.TotalReproducciones}</td>
+                                    <td>${item.IngresoIdioma}</td>
                                     <td>${item.IngresoTotal}</td>
                                     
                                 `;
