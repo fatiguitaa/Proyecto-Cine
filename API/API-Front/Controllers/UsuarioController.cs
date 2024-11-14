@@ -16,14 +16,6 @@ namespace API_Front.Controllers
                _repository = clienteRepository;
         }
 
-        private string Encriptar(string contraDesencriptada)
-        {
-            string contraEncriptada = string.Empty;
-            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(contraDesencriptada);
-            contraEncriptada = Convert.ToBase64String(encryted);
-            return contraEncriptada;
-        }
-
         [HttpGet("email/{email}")]
         public IActionResult GetEmail(string email)
         {
@@ -42,7 +34,7 @@ namespace API_Front.Controllers
         {
             try
             {
-                return Ok(_repository.Login(email, Encriptar(contraseña)));
+                return Ok(_repository.Login(email, contraseña));
             }
             catch
             {
@@ -56,7 +48,7 @@ namespace API_Front.Controllers
             try
             {
                 Usuario usuario = new Usuario();
-                usuario.Contrasenia = Encriptar(contraseña);
+                usuario.Contrasenia = contraseña;
                 usuario.EMail = email;
                 return Ok(_repository.Register(usuario));
             }
