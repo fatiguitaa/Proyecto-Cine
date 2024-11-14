@@ -23,9 +23,14 @@ const cargarAsientos = async function () {
 
             // asiento.setAttribute("name")
             asiento.type = "checkbox"
+            asiento.classList.add("Asiento")
             asiento.setAttribute("NombreAsiento",columna.nombre)
             asiento.name = columna.id
             asiento.checked = columna.ocupado
+
+            
+
+            
             if (columna.ocupado)
             {
                 asiento.disabled=true
@@ -39,6 +44,11 @@ const cargarAsientos = async function () {
                 label.id="TxT-"+asiento.name
                 filaAsientos.appendChild(label);
                 
+                const Icono= document.createElement("label")
+                Icono.innerHTML="<svg version='1.2' class='AsientoIcono AsientoIconoSeleccionado' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 188 151' width='188' height='151' style='transform: rotate(180deg);'> <title>New Project</title><style>.s0 { fill: #cdcdcd } .s1 { fill: #ffffff } </style><path id='Shape 2' class='s0' d='m49 5.3h90c9.9 0 18 8.1 18 18v88.4h-126v-88.4c0-9.9 8.1-18 18-18z'/>      <path id='Shape 1' class='s1' d='m28.5 109.5h131c11.3 0 20.5 9.2 20.5 20.5 0 11.3-9.2 20.5-20.5 20.5h-131c-11.3 0-20.5-9.2-20.5-20.5 0-11.3 9.2-20.5 20.5-20.5z'/>      <path id='Shape 3' class='s1' d='m16.5 2c8.6 0 15.5 6.9 15.5 15.5v77c0 8.6-6.9 15.5-15.5 15.5-8.6 0-15.5-6.9-15.5-15.5v-77c0-8.6 6.9-15.5 15.5-15.5zm0 0c8.6 0 15.5 6.9 15.5 15.5v77c0 8.6-6.9 15.5-15.5 15.5-8.6 0-15.5-6.9-15.5-15.5v-77c0-8.6 6.9-15.5 15.5-15.5z'/>      <path id='Shape 3 copy' class='s1' d='m171.5 2c8.6 0 15.5 6.9 15.5 15.5v77c0 8.6-6.9 15.5-15.5 15.5-8.6 0-15.5-6.9-15.5-15.5v-77c0-8.6 6.9-15.5 15.5-15.5zm0 0c8.6 0 15.5 6.9 15.5 15.5v77c0 8.6-6.9 15.5-15.5 15.5-8.6 0-15.5-6.9-15.5-15.5v-77c0-8.6 6.9-15.5 15.5-15.5z'/></svg>"
+                label.appendChild(Icono)
+                label.setAttribute("for",asiento.id)
+
                 asiento.addEventListener('change',(event)=>
                 {
                     console.log(CantidadDetalles)
@@ -46,7 +56,9 @@ const cargarAsientos = async function () {
                     {
                        // $("#Lista-Detalles").appendChild(event.currentTarget.firstChild)
                         CantidadDetalles++
-
+                        console.log(event.currentTarget.parentElement)
+                        //event.currentTarget.Parent.classList.add(AsientoIconoOcupado)
+                        //Icono.classList.remove(AsientoIconoSeleccionado)
                     }
                     else
                     {
@@ -65,5 +77,7 @@ const cargarAsientos = async function () {
         contenedorFila.appendChild(filaAsientos)
     }
 }
+
+
 
 document.addEventListener("DOMContentLoaded", cargarAsientos)

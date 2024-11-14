@@ -55,3 +55,36 @@ body
         color: black;
         font-weight: bold;
     }
+    .Asiento
+    {
+        opacity: 0;
+        height: 3rem;
+        width: 3rem;
+        position: absolute;
+        z-index: 2;
+        margin: 0;
+        cursor: pointer;
+    }
+    .AsientoIcono
+    {
+        height: 35px;
+    }
+    .AsientoIconoOcupado .s0
+    {
+        fill: rgb(158, 1, 1);
+        
+    }
+    .AsientoIconoOcupado .s1
+    {
+        fill: rgb(205, 2, 2)
+    }
+    .AsientoIconoSeleccionado .s0
+    {
+        fill: rgb(2, 133, 2)
+    }
+    .AsientoIconoSeleccionado .s1
+    {
+        fill: #009c00;
+    }
+    
+    
