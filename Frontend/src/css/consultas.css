@@ -130,3 +130,10 @@ margin: 1px;
 display: flex;
 
 }
+.radiobtn
+{
+  justify-content: center;
+  align-items: baseline;
+  gap: 15px; 
+}
+

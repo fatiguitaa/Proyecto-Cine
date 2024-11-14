@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inputConsulta = document.getElementById('input');
     const fechaini = document.getElementById('fechaini');
     const fechafin = document.getElementById('fechafin');
-    const boolConsulta = document.getElementById('bool');
+    const boolConsulta = document.querySelector('.radiobtn');
     const error = document.getElementById('error');
     const consultaParrafo = document.getElementById('consultaParrafo');
     const accionBtn = document.getElementById('accionBtn');
@@ -16,7 +16,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const label1 = document.querySelector('#labelinp1');
     const label2 = document.querySelector('#labelinp2');
     const label3 = document.querySelector('#labelinp3');
-   
+    let value;
+    function desmarcarRadios() {
+       
+        const radio = document.getElementById('ocupado');    
+        const radio2 = document.getElementById('libre');           
+         radio.checked = false;
+         radio2.checked = true;
+    }
+
+    function verificarEstado() {
+        // Obtener el radio button de "Ocupado" y "Libre"
+        let ocupado = document.getElementById('ocupado');
+        let libre = document.getElementById('libre');
+            
+         value = ocupado.checked ? false : libre.checked ? true : false;
+
+       
+    }
     select.addEventListener('change', function mostrarContenido() {
        
         
@@ -69,12 +86,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 label2.style.display = 'block';
                 label3.style.display = 'block';
                 label2.textContent='ID de la Pelicula:';
-                label3.textContent='Asiento Libre:';
+                label3.textContent='Asientos:';
                 inputConsulta.style.display = 'block'; 
-                boolConsulta.style.display = 'block';
+                boolConsulta.style.display = 'flex';
+                
                 fechaini.style.display = 'none';
                 fechafin.style.display = 'none';
                 inputConsulta.placeholder="0";
+               
                 
             }
             else if (select.value ==4 )
@@ -114,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
             inputConsulta.value = '';
             fechaini.value = '';
             fechafin.value = '';
-            boolConsulta.checked = false;
+            desmarcarRadios();
             error.textContent='';
             scroll(100)
            
@@ -132,7 +151,8 @@ document.addEventListener("DOMContentLoaded", function () {
     accionBtn.addEventListener('click', async function accionBoton() {
         const queryValue = select.value;  
        error.textContent='';
-        let value = boolConsulta.checked ? "true" : "false";
+       verificarEstado();
+     
         if (!queryValue) {
            
             return;
