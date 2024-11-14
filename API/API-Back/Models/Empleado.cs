@@ -19,6 +19,8 @@ public partial class Empleado
 
     public int? IdUsuario { get; set; }
 
+    public DateOnly? FechaNac { get; set; }
+
     public virtual Area IdAreaNavigation { get; set; }
 
     public virtual Usuario IdUsuarioNavigation { get; set; }

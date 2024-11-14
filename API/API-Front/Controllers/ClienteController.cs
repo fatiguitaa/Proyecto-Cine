@@ -18,11 +18,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPost("Crear")]
-        public IActionResult Crear(string nombre, string apellido,int edad, string? telefono,int? idUsuario)
+        public IActionResult Crear(string nombre, string apellido,DateOnly fechaNac, string? telefono,int? idUsuario)
         {
             try
             {
-                return Ok(_clienteRepository.Create(nombre, apellido, edad, telefono, idUsuario));
+                return Ok(_clienteRepository.Create(nombre, apellido, fechaNac, telefono, idUsuario));
             }
             catch 
             {
@@ -46,11 +46,11 @@ namespace API_Front.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(string nombre, string apellido,int edad,string? telefono,int? idUsuario)
+        public IActionResult Update(string nombre, string apellido,DateOnly FechaNac,string? telefono,int? idUsuario)
         {
             try
             {
-                return Ok(_clienteRepository.Update(nombre, apellido, edad, telefono, idUsuario));
+                return Ok(_clienteRepository.Update(nombre, apellido, FechaNac, telefono, idUsuario));
             }
             catch 
             {

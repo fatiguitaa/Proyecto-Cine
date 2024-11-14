@@ -15,13 +15,14 @@ namespace API_Back.Repositories
             _context = context;
         }
 
-        public bool Create(string nombre, string apellido, string telefono, int idArea, int? idUsuario)
+        public bool Create(string nombre, string apellido,DateOnly FechaNac, string telefono, int idArea, int? idUsuario)
         {
             Empleado empleado = new Empleado();
             empleado.Nombre = nombre;
             empleado.Apellido = apellido;
             empleado.Telefono = telefono;
             empleado.IdArea = idArea;
+            empleado.FechaNac = FechaNac;
             _context.Empleados.Add(empleado);
             return _context.SaveChanges()==1;
         }
@@ -36,7 +37,7 @@ namespace API_Back.Repositories
             return _context.Empleados.Where(X=> X.IdUsuario==idUsuario).FirstOrDefault();
         }
 
-        public bool Update(string nombre, string apellido, string telefono, int idArea, int? idUsuario)
+        public bool Update(string nombre, string apellido, DateOnly FechaNac, string telefono, int idArea, int? idUsuario)
         {
             Empleado? empleado = _context.Empleados.Where(X=>X.IdUsuario==idUsuario).FirstOrDefault();
             if (empleado != null)
@@ -45,6 +46,7 @@ namespace API_Back.Repositories
                 empleado.Apellido= apellido;
                 empleado.Telefono= telefono;
                 empleado.IdArea= idArea;
+                empleado.FechaNac = FechaNac;
             }
             return _context.SaveChanges() == 1;
         }

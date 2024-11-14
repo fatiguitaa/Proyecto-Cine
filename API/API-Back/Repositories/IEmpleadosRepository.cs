@@ -9,9 +9,9 @@ namespace API_Back.Repositories
 {
     public interface IEmpleadosRepository
     {
-        bool Create(string nombre, string apellido, string telefono,int idArea, int? idUsuario);
+        bool Create(string nombre, string apellido,DateOnly Fechanac, string telefono,int idArea, int? idUsuario);
         List<Empleado>? GetAll();
-        bool Update(string nombre, string apellido, string telefono,int idArea, int? idUsuario);
+        bool Update(string nombre, string apellido, DateOnly Fechanac, string telefono, int idArea, int? idUsuario);
         Empleado? GetByIdUsuario(int idUsuario);
     }
 }
