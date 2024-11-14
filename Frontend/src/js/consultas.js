@@ -271,7 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         table.innerHTML = `
                             <th>idReproduccion</th>
                             <th>numeroSala</th>
-                            <th>idPelicula</th>
+                            <th>NombrePelicula</th>
                             <th>Idioma</th>
                             <th>horarioInicio</th>
                             <th>cantidadAsientos</th>
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         row.innerHTML = `
                             <td>${item.idReproduccion}</td>
                             <td>${item.numeroSala}</td>
-                            <td>${item.idPelicula}</td>
+                            <td>${item.NombrePelicula}</td>
                             <td>${item.Idioma}</td>
                             <td>${item.horarioInicio}</td>
                             <td>${item.CantidadAsientos}</td>
