@@ -1,4 +1,4 @@
-"use strict";
+
 
 const cargarPeliculas = async function () {
     return fetch("http://localhost:5141/api/pelicula")

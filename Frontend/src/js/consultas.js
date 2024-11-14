@@ -1,4 +1,4 @@
-
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
     const select = document.getElementById('consultaSelect');
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (select.value ==3 )
             {
                 
-                consultaParrafo.textContent = 'Obtener la sala que tiene el mayor número de asientos libres para una reproducción específica:';
+                consultaParrafo.textContent = 'Obtener la sala que tiene el mayor número de asientos en un estado determinado para una reproducción específica:';
                 contentDiv.style.display = 'block';
                 label1.style.display = 'none';
                 label2.style.display = 'block';
@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }); 
         
     }
-    accionBtn.addEventListener('click', async function accionBoton () {
+    accionBtn.addEventListener('click', async function accionBoton() {
         const queryValue = select.value;  
        error.textContent='';
         let value = boolConsulta.checked ? "true" : "false";
@@ -139,7 +139,12 @@ document.addEventListener("DOMContentLoaded", function () {
            let data, response;
             if (queryValue==2)
             {
-                 response = await fetch(`https://localhost:7220/api/TpBd/consulta2?duracionMin=${inputConsulta.value}`);
+                
+                if (inputConsulta.value>=0)
+                {
+
+                
+                    response = await fetch(`https://localhost:7220/api/TpBd/consulta2?duracionMin=${inputConsulta.value}`);
             
                 if (!response.ok) {
                     throw new Error('Error al obtener los datos');
@@ -180,9 +185,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 dataTable.style.display = 'table';
             }
+                else if (inputConsulta.value<0)
+                {
+                    
+                    error.textContent = 'Debe ingresar un numero mayor a 0';  
+                    error.display='block';
+                    tableBody.innerHTML = '';
+                    thead.innerHTML = ''; 
+                    return
+                }
+                 
+            }
             else if (queryValue==1)
             {
-                 response = await fetch(`https://localhost:7220/api/TpBd/consulta1?fechaInicio=${fechaini.value}&fehchaFin=${fechafin.value}`);
+            if (fechafin.value > fechaini.value)
+                {
+                
+                    response = await fetch(`https://localhost:7220/api/TpBd/consulta1?fechaInicio=${fechaini.value}&fehchaFin=${fechafin.value}`);
             
                 if (!response.ok) {
                     throw new Error('Error al obtener los datos');
@@ -215,6 +234,16 @@ document.addEventListener("DOMContentLoaded", function () {
     
                 
                 dataTable.style.display = 'table';
+            }
+                else if (fechafin.value < fechaini.value)
+                    {
+                        
+                    error.textContent = 'El rango de fechas no es valido';  
+                    error.display='block';
+                    tableBody.innerHTML = '';
+                    thead.innerHTML = ''; 
+                    return
+                    }
                
             }
             
@@ -240,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <th>idPelicula</th>
                             <th>Idioma</th>
                             <th>horarioInicio</th>
+                            <th>cantidadAsientos</th>
                             
                         `;
                         thead.appendChild(table);}
@@ -251,6 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <td>${item.idPelicula}</td>
                             <td>${item.Idioma}</td>
                             <td>${item.horarioInicio}</td>
+                            <td>${item.CantidadAsientos}</td>
                             
                         `;
                         tableBody.appendChild(row);
@@ -302,6 +333,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     else if (queryValue==5)
                         {
+                            if (inputConsulta.value>=0)
+                                {
                              response = await fetch(`https://localhost:7220/api/TpBd/Consulta5?montoMinimo=${inputConsulta.value}`);
                         
                             if (!response.ok) {
@@ -338,6 +371,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                             
                             dataTable.style.display = 'table';
+                        }
+                            else if (inputConsulta.value<0)
+                                {
+                                    
+                                    error.textContent = 'Debe ingresar un numero mayor a 0';  
+                                    error.display='block';
+                                    tableBody.innerHTML = '';
+                                    thead.innerHTML = ''; 
+                                    return
+                                }
                         }
                         console.log(data);
                          if (data.length === 0) {

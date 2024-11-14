@@ -10,6 +10,12 @@
     <link rel="stylesheet" href="./src/css/navbar.css">
     <link rel="stylesheet" href="./src/css/consultas.css">
 
+
+    <script src="./src/js/consultas.js"></script> 
+<script src="./src/js/boostrap/bootstrap.min.js"></script>
+<script src="./src/js/utils/domUtils.js"></script>
+<script src="./src/js/entrada.js"></script>
+
     <title>Consultas</title>
     
 </head>
@@ -44,7 +50,7 @@
     <div class="select-box">
     
         
-    <select id="consultaSelect" class="select" change="mostrarContenido()" >
+    <select id="consultaSelect" class="select"  >
         <option value="" class="label">Seleccione una consulta</option>
         <option value="1" class="label">Consulta 1</option>
         <option value="2" class="label">Consulta 2</option>
@@ -67,7 +73,7 @@
 
         <input type="checkbox" id="bool" class="inputnum"></center>
 
-        <button class="previsualizacion__ver boton" id="accionBtn" onclick="accionBoton() ">Buscar</button>
+        <button class="previsualizacion__ver boton" id="accionBtn">Buscar</button>
         <p id="error"></p>
     </div>
 
@@ -83,10 +89,7 @@
 
 
 
-    <script src="./src/js/entrada.js"></script>
-    <script src="./src/js/consultas.js"></script> 
-<script src="./src/js/boostrap/bootstrap.min.js"></script>
-<script src="./src/js/utils/domUtils.js"></script>
+
 
 </body>
 </html>
