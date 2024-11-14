@@ -30,12 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
              if (select.value ==1 )
                 {
                    
-                    consultaParrafo.textContent = 'Crear un procedimiento almacenado que muestre el total de ventas de las películas desde una fecha “a” hasta una fecha “b” . Y consultarlo:';
+                    consultaParrafo.textContent = 'Mostrar el total de ventas de las películas desde una fecha “a” hasta una fecha “b”';
                     contentDiv.style.display = 'block';
                     boolConsulta.style.display = 'none';
                     inputConsulta.style.display = 'none';
                     label1.style.display = 'block';
                     label2.style.display = 'block';
+                    label3.style.display = 'none';
                     label1.textContent='Fecha de Inicio:';
                     label2.textContent='Fecha de Fin:';
                     fechaini.style.display = 'block';
@@ -51,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         label1.style.display = 'none';
                         label2.style.display = 'block';
                         label2.textContent='Duracion:';
+                        label3.style.display = 'none';
                         inputConsulta.style.display = 'block'; 
                         boolConsulta.style.display = 'none';
                         fechaini.style.display = 'none';
@@ -219,6 +221,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <th>idPelicula</th>
                         <th>nombre</th>      
                         <th>IngresosTotales</th>
+                        <th>Fecha</th>
                     `;
                     thead.appendChild(table);}
                     data.forEach(item => {
@@ -227,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <td>${item.idPelicula}</td>
                         <td>${item.nombre}</td>
                         <td>${item.ingresosTotales}</td>
+                        <td>${item.Fecha}</td>
                         
                     `;
                     tableBody.appendChild(row);
