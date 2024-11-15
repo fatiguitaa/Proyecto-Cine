@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./src/css/gestor.css">
     <link rel="icon" href="./src/img/favicon.ico">
 
-    <title>Cine G1 - Nombre</title>
+    <title>Cine G1 - Gestor</title>
 </head>
 <body class="cargando">
     <div class="carga d-flex justify-content-center align-items-center">
@@ -44,163 +44,164 @@
       </div>
     </nav>
 
-    <h1>Gestor de la base de datos</h1>
+    <h1 class = "gestor__titulo">Gestor de la base de datos</h1>
 
-    <h2>Peliculas</h2>
-    <form class="peliculas__borrar">
-        <legend>Borrar</label>
+    <div class="contenedor__formularios d-flex align-items-center flex-column">
+      <h2>Peliculas</h2>
+      <form class="peliculas__borrar">
+          <legend>Borrar</legend>
+
+          <label for="idPelicula">Pelicula</label>
+          <select name="idPelicula" class="peliculas__borrar__id input"></select>
+
+          <input type="submit" class="peliculas__borrar__enviar boton">
+          <div class="peliculas__borrar__resultado"></div>
+      </form>
+
+      
+      <form class="peliculas__crear">
+        <legend>Crear</legend>
+        <label for="urlPortada">Link a la foto de portada</label>
+        <input type="text" name="urlPortada" class="peliculas__crear__url input">
+
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" class="peliculas__crear__nombre input">
+
+        <label for="fechEstreno">Fecha de estreno</label>
+        <input type="date" name="fechaEstreno" class="peliculas__crear__fecha input">
+
+        <label for="duracionMinutos">Duracion en minutos</label>
+        <input type="number" name="duracionMinutos" min="1" max="51420" class="peliculas__crear__duracion input">
+
+        <label for="sinopsis">Sinopsis</label>
+        <input type="text" name="sinopsis" class="peliculas__crear__sinopsis input">
+        
+        <label for="idGenero">Genero</label>
+        <select name="idGenero" class="peliculas__crear__genero input"></select>
+
+        <input type="submit" class="peliculas__crear__enviar boton">
+
+        <div class="peliculas__crear__resultado"></div>
+      </form>
+
+      <form class="peliculas__actualizar">
+        <legend>Actualizar</legend>
 
         <label for="idPelicula">Pelicula</label>
-        <select name="idPelicula" class="peliculas__borrar__id input">
+        <select name="idPelicula" class="peliculas__actualizar__id input"></select>
 
-        <input type="submit" class="peliculas__borrar__enviar boton">
-        <div class="peliculas__borrar__resultado"></div>
-    </form>
+        <label for="urlPortada">Link a la foto de portada</label>
+        <input type="text" name="urlPortada" class="peliculas__actualizar__url input">
 
-    
-    <form class="peliculas__crear">
-      <legend>Crear</legend>
-      <label for="urlPortada">Link a la foto de portada</label>
-      <input type="text" name="urlPortada" class="peliculas__crear__url input">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" class="peliculas__actualizar__nombre input">
 
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" class="peliculas__crear__nombre input">
+        <label for="fechEstreno">Fecha de estreno</label>
+        <input type="date" name="fechaEstreno" class="peliculas__actualizar__fecha input">
 
-      <label for="fechEstreno">Fecha de estreno</label>
-      <input type="date" name="fechaEstreno" class="peliculas__crear__fecha input">
+        <label for="duracionMinutos">Duracion en minutos</label>
+        <input type="number" name="duracionMinutos" min="1" max="51420" class="peliculas__actualizar__duracion input">
 
-      <label for="duracionMinutos">Duracion en minutos</label>
-      <input type="number" name="duracionMinutos" min="1" max="51420" class="peliculas__crear__duracion input">
+        <label for="sinopsis">Sinopsis</label>
+        <input type="text" name="sinopsis" class="peliculas__actualizar__sinopsis input">
+        
+        <label for="idGenero">Genero</label>
+        <select name="idGenero" class="peliculas__actualizar__genero input"></select>
 
-      <label for="sinopsis">Sinopsis</label>
-      <input type="text" name="sinopsis" class="peliculas__crear__sinopsis input">
-      
-      <label for="idGenero">Genero</label>
-      <select name="idGenero" class="peliculas__crear__genero input">
+        <input type="submit" class="peliculas__actualizar__enviar boton">
 
-      <input type="submit" class="peliculas__crear__enviar boton">
+        <div class="peliculas__actualizar__resultado"></div>
+      </form>
 
-      <div class="peliculas__crear__resultado"></div>
-    </form>
+      <h2>Carteleras</h2>
+      <form class="carteleras__crear">
+        <legend>Crear</legend>
 
-    <form class="peliculas__actualizar">
-      <legend>Actualizar</legend>
+        <label for="fechaInicio">Fecha de inicio</label>
+        <input type="date" name="fechaInicio" class="carteleras__crear__inicio input">
 
-      <label for="idPelicula">Pelicula</label>
-      <select name="idPelicula" class="peliculas__actualizar__id input">
+        <label for="fechaFin">Fecha de finalizacion</label>
+        <input type="date" name="fechaFin" class="carteleras__crear__final input">
 
-      <label for="urlPortada">Link a la foto de portada</label>
-      <input type="text" name="urlPortada" class="peliculas__actualizar__url input">
+        <input type="submit" class="carteleras__crear__enviar boton">
 
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" class="peliculas__actualizar__nombre input">
+        <div class="carteleras__crear__resultado"></div>
+      </form>
 
-      <label for="fechEstreno">Fecha de estreno</label>
-      <input type="date" name="fechaEstreno" class="peliculas__actualizar__fecha input">
+      <form class="carteleras__actualizar">
+        <legend>Actualizar</legend>
+        <label for="idCartelera">ID de la cartelera</label>
+        <input type="number" name="idCartelera" min="1" class="carteleras__actualizar__id input">
 
-      <label for="duracionMinutos">Duracion en minutos</label>
-      <input type="number" name="duracionMinutos" min="1" max="51420" class="peliculas__actualizar__duracion input">
+        <label for="fechaInicio">Fecha de inicio</label>
+        <input type="date" name="fechaInicio" class="carteleras__actualizar__inicio input">
 
-      <label for="sinopsis">Sinopsis</label>
-      <input type="text" name="sinopsis" class="peliculas__actualizar__sinopsis input">
-      
-      <label for="idGenero">Genero</label>
-      <select name="idGenero" class="peliculas__actualizar__genero input">
+        <label for="fechaFin">Fecha de finalizacion</label>
+        <input type="date" name="fechaFin" class="carteleras__actualizar__final input">
 
-      <input type="submit" class="peliculas__actualizar__enviar boton">
+        <input type="submit" class="carteleras__actualizar__enviar boton">
 
-      <div class="peliculas__actualizar__resultado"></div>
-    </form>
+        <div class="carteleras__actualizar__resultado"></div>
+      </form>
 
-    <h2>Carteleras</h2>
-    <form class="carteleras__crear">
-      <legend>Crear</legend>
+      <form class="carteleras__agregar">
+        <legend>Agregar pelicula</legend>
+        <label for="idCartelera">Id de la cartelera</label>
+        <input type="number" name="idCartelera" min="1" class="carteleras__agregar__cartelera input">
+        
+        <label for="idPelicula">Pelicula</label>
+        <select name="idPelicula" class="carteleras__agregar__pelicula input"></select>
 
-      <label for="fechaInicio">Fecha de inicio</label>
-      <input type="date" name="fechaInicio" class="carteleras__crear__inicio input">
+        <input type="submit" class="carteleras__agregar__enviar boton">
 
-      <label for="fechaFin">Fecha de finalizacion</label>
-      <input type="date" name="fechaFin" class="carteleras__crear__final input">
+        <div class="carteleras__agregar__resultado"></div>
+      </form>
 
-      <input type="submit" class="carteleras__crear__enviar boton">
+      <form class="carteleras__quitar">
+        <legend>Quitar pelicula</legend>
+        <label for="idCartelera">Id de la cartelera</label>
+        <input type="number" name="idCartelera" min="1" class="carteleras__quitar__cartelera input">
+        
+        <label for="idPelicula">Pelicula</label>
+        <Select name="idPelicula" class="carteleras__quitar__pelicula input"></select>
 
-      <div class="carteleras__crear__resultado"></div>
-    </form>
+        <input type="submit" class="carteleras__quitar__enviar boton">
 
-    <form class="carteleras__actualizar">
-      <legend>Actualizar</legend>
-      <label for="idCartelera">ID de la cartelera</label>
-      <input type="number" name="idCartelera" min="1" class="carteleras__actualizar__id input">
+        <div class="carteleras__quitar__resultado"></div>
+      </form>
 
-      <label for="fechaInicio">Fecha de inicio</label>
-      <input type="date" name="fechaInicio" class="carteleras__actualizar__inicio input">
+      <h2>Empleados</h2>
+      <form class="empleados__crear">
+        <legend>Crear</legend>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" class="empleados__crear__nombre input">
 
-      <label for="fechaFin">Fecha de finalizacion</label>
-      <input type="date" name="fechaFin" class="carteleras__actualizar__final input">
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" class="empleados__crear__apellido input"> 
 
-      <input type="submit" class="carteleras__actualizar__enviar boton">
+        <label for="telefono">Telefono</label>
+        <input type="number" name="telefono" min="1" class="empleados__crear__telefono input">
 
-      <div class="carteleras__actualizar__resultado"></div>
-    </form>
+        <label for="idArea">Area</label>
+        <select name="idArea" class="empleados__crear__area input"></select>
+        
+        <label for="idUsuario">Id del usuario</label>
+        <input type="number" name="idUsuario" min="1" class="empleados__crear__usuario input">
 
-    <form class="carteleras__agregar">
-      <legend>Agregar pelicula</legend>
-      <label for="idCartelera">Id de la cartelera</label>
-      <input type="number" name="idCartelera" min="1" class="carteleras__agregar__cartelera input">
-      
-      <label for="idPelicula">Pelicula</label>
-      <select name="idPelicula" class="carteleras__agregar__pelicula input">
+        <label for="fechaNac">Fecha de nacimineto</label>
+        <input type="date" name="fechaNac" class="empleados__crear__fecha input">
 
-      <input type="submit" class="carteleras__agregar__enviar boton">
+        <input type="submit" class="empleados__crear__enviar boton">
 
-      <div class="carteleras__agregar__resultado"></div>
-    </form>
-
-    <form class="carteleras__quitar">
-      <legend>Quitar pelicula</legend>
-      <label for="idCartelera">Id de la cartelera</label>
-      <input type="number" name="idCartelera" min="1" class="carteleras__quitar__cartelera input">
-      
-      <label for="idPelicula">Pelicula</label>
-      <Select name="idPelicula" class="carteleras__quitar__pelicula input">
-
-      <input type="submit" class="carteleras__quitar__enviar boton">
-
-      <div class="carteleras__quitar__resultado"></div>
-    </form>
-
-    <h2>Empleados</h2>
-    <form class="empleados__crear">
-      <legend>Crear</legend>
-      <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" class="empleados__crear__nombre input">
-
-      <label for="apellido">Apellido</label>
-      <input type="text" name="apellido" class="empleados__crear__apellido input"> 
-
-      <label for="telefono">Telefono</label>
-      <input type="number" name="telefono" min="1" class="empleados__crear__telefono input">
-
-      <label for="idArea">Area</label>
-      <select name="idArea" class="empleados__crear__area input">
-      
-      <label for="idUsuario">Id del usuario</label>
-      <input type="number" name="idUsuario" min="1" class="empleados__crear__usuario input">
-
-      <label for="fechaNac">Fecha de nacimineto</label>
-      <input type="date" name="fechaNac" class="empleados__crear__fecha input">
-
-      <input type="submit" class="empleados__crear__enviar boton">
-
-      <div class="empleados__crear__resultado"></div>
-    </form>
+        <div class="empleados__crear__resultado"></div>
+      </form>
+    </div>
 
 
 
     <script src="./src/js/boostrap/bootstrap.min.js"></script>
     <script src="./src/js/utils/domUtils.js"></script>
     <script src="./src/js/entrada.js"></script>
-    <script src="./src/js/utils/FuncionesExtra.js"></script>
     <script src="./src/js/gestor.js"></script>
 </body>
 </html>

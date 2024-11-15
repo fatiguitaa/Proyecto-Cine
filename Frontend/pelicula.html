@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./src/css/pelicula.css">
     <link rel="icon" href="./src/img/favicon.ico">
 
-    <title>Cine G1 - Nombre</title>
+    <title>Cine G1 - Pelicula</title>
 </head>
 <body class="cargando">
     <div class="carga d-flex justify-content-center align-items-center">
@@ -44,19 +44,39 @@
       </div>
     </nav>
 
-
-    <div class="contenedor d-flex justify-content-center align-items-center">
-      <img class="imagen">
-      <div class="informacion">
-        <h1 class="titulo"></h1>
-
-        <p class="descripcion text-center"></p>
-        <p class="duracion"></p>
-        <p class="fecha"></p>
-        <p class="genero"></p>
+    <div class="container">
+      <div class="cellphone-container">    
+          <div class="movie">       
+            <div class="movie-img">
+              <img class="pelicula__imagen">
+            </div>
+            <div class="text-movie-cont">
+              <div class="mr-grid">
+                <div class="col1">
+                  <h1 class="pelicula__titulo"></h1>
+                  <ul class="movie-gen">
+                    <li class="pelicula__duracion"></li>
+                    <li class="pelicula__genero"></li>
+                    <li class="pelicula__fecha"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mr-grid summary-row">
+                <div class="col2">
+                  <h2 class="descripcion__titulo">Descripcion</h2>
+                  <p class="movie-description"> </p>
+                </div>
+                </div>
+              </div>
+              <div class="mr-grid">
+                <div class="col1">
+                  <p class="movie-description"></p>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
-    
+    </div>    
 
     <script src="./src/js/boostrap/bootstrap.min.js"></script>
     <script src="./src/js/utils/domUtils.js"></script>

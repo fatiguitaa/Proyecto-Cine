@@ -4,12 +4,12 @@
 
 let data;
 const Factura = async () => {
-    console.log('porno')
+
 const url= window.location.href
 const params = new URL(url).searchParams
 const numbersList = Array.from(params.keys()).map(Number)
 numbersList.splice(0,4)
-console.log(numbersList)
+
 const _precio = params.get("precio")
 const _idReproduccion = params.get("idReproduccion")
 const _idpromocion = params.get("idPromocion")
@@ -24,15 +24,12 @@ numbersList.forEach(_IdAsiento =>
 {
      oDetalle={IdAsiento : _IdAsiento,precio : _precio,idReproduccion : _idReproduccion,idPromocion:_idpromocion}
     ListaDetalles.push(oDetalle)
-    console.log(oDetalle)
     total+=parseInt(_precio)
  
 });
-console.log('el total es', total)
-console.log(_idCliente)
-console.log(ListaDetalles)
+
 const fechaFormateada = new Date().toISOString();
-console.log(fechaFormateada);
+
 
 
 const reproduccionesPromises = ListaDetalles.map(async (item) => {
@@ -100,7 +97,6 @@ await Promise.all(AsientosPromises);
                 
             `;
             
-            console.log(row)
             tableBody.appendChild(row);
         });
 
@@ -126,7 +122,6 @@ await Promise.all(AsientosPromises);
                 data = await response.json();
                 alert("Compra Realizada con Exito");
             window.history.back();
-                console.log('pija')
             });
             
 

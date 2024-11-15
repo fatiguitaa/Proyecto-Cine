@@ -88,7 +88,7 @@ $(".peliculas__crear__enviar").addEventListener("click", async evento => {
         }
         else {
             mostrarResultadoGestor(".peliculas__crear__resultado", "Ocurrio un error creando la pelicula.", "error")
-            console.log(response)
+
         }
     })
 })
@@ -192,7 +192,7 @@ $(".carteleras__actualizar__enviar").addEventListener("click", async evento => {
     const fechaInicioDateTime = new Date(fechaInicio).toISOString()
     const fechaFinDateTime = new Date(fechaFin).toISOString()
 
-    console.log(fechaInicioDateTime, fechaFinDateTime)
+
     await fetch("http://localhost:5141/api/Cartelera", {
         method: "PUT",
         headers: {

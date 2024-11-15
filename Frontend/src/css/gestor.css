@@ -1,8 +1,67 @@
 body {
     background-color: #313131;
     color: var(--blanco);
+
 }
 
-.peliculas__borrar__error {
-    
+.gestor__titulo {
+    font-size: 5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.error:not(:empty) {
+    background-color: #fcc2c3;
+    border: 1px solid #fce4e4;
+    float: left;
+    padding: .5rem;
+    margin-top: 1rem;
+    color: #cc0033;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.correcto:not(:empty) {
+    background-color: #c4fcc2;
+    border: 1px solid #ebfce4;
+    float: left;
+    padding: .5rem;
+    margin-top: 1rem;
+    color: #0e7500;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    margin-bottom: 3rem;
+}
+
+.boton {
+    margin: 2rem 0;
+}
+
+
+form legend {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.peliculas__borrar {
+    display: flex;
+    flex-direction: column;
 }

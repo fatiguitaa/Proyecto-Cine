@@ -22,6 +22,10 @@ body {
     margin: 0;
 }
 
+.contenedor__visibilidad{
+    height: 4rem;
+}
+
 .registrar__panel__visibilidad {
     width: 2rem;
     height: 2rem;

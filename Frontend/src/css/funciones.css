@@ -30,10 +30,14 @@ body {
 }
 
 .cardWrap {
-    /* width: 27em; */
     margin: 2em auto;
     color: #fff;
     font-family: sans-serif;
+    transition: all .2 ease-in-out;
+}
+
+.cardWrap:hover {
+    transform: scale(1.01);
 }
 .carta {
     background: linear-gradient(to bottom, #e84c3d 0%, #e84c3d 26%, #ecedef 26%, #ecedef 100%);

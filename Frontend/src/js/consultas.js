@@ -275,7 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (queryValue==3)
                 {
                      response = await fetch(`http://localhost:5141/api/TpBd/consulta3?idPelicula=${inputConsulta.value}&asientosLibres=${value}`);
-                    console.log('Valor de la consulta:', value);
                     if (!response.ok) {
                         throw new Error('Error al obtener los datos');
                     }
@@ -317,7 +316,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 else if (queryValue==4)
                     {
-                        console.log('Valor de la consulta:', value);
                          response = await fetch(`http://localhost:5141/api/TpBd/consulta4?idSala=${inputConsulta.value}`);
                         
                         if (!response.ok) {
@@ -325,7 +323,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
             
                          data = await response.json();
-                        console.log('Datos recibidos:', data);
                         tableBody.innerHTML = '';
                         thead.innerHTML = '';
             
@@ -409,7 +406,6 @@ document.addEventListener("DOMContentLoaded", function () {
                                     return
                                 }
                         }
-                        console.log(data);
                          if (data.length === 0) {
                         
                             error.textContent = 'No se encontro ningun resultado';  
@@ -419,7 +415,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                         scroll(550)
         } catch (a) {
-            console.error(a);
             
             error.textContent = 'No hay datos';  
             error.display='block';

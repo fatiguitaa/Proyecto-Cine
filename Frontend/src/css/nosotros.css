@@ -1,30 +1,28 @@
-.content {
-    min-height: 100vh; /* Asegura que el contenido llene toda la altura de la ventana */
-     /* Espacio para el footer, ajusta según el tamaño del footer */
-    margin-left: 5%;
-    margin-right: 20%;
-    
-}
+
 html,body {
     background-color: #313131;
     color: var(--blanco);
-    
+}
 
+.titulo__nosotros {
+    font-size: 5rem;
+    margin: 3rem 0;
+    text-transform: uppercase;
 }
 .member_section{
     border-radius: 20px;
     background-color: #3A3B3C;
     margin-bottom: 2%;
-    display: flex;           /* Usamos flexbox para alinear el texto y la imagen */
-         /* Alinea verticalmente la imagen y el texto */
-               /* Usamos flexbox para alinear el contenido */
-  justify-content: space-between;  /* Deja el máximo espacio entre el texto y la imagen */
-  
-    
+    display: flex;           
+    justify-content: space-between; 
+
+    width: 80rem;
 }
 .content_texto{
-    margin-top: 0.5625%;
-    margin-left: 1%;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    font-size: 3rem;
+    
 }
 .footer{
     background-color:#3A3B3C ;
@@ -45,8 +43,7 @@ html,body {
 }
 .enlace_blanco{
     color:aliceblue;
-      
 }
 .enlace_blanco:hover {
-    color: lightgray;  /* Cambia el color a gris claro cuando el enlace está en hover */
+    color: lightgray; 
   }

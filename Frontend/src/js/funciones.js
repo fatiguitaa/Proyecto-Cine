@@ -40,7 +40,7 @@ const cargarFunciones = async function () {
                 </div>
                 <div class="time">
                     <h2>${hora}</h2>
-                    <span>time</span>
+                    <span>hora</span>
                 </div>
                 <div class="time">
                     <h2>${fecha}</h2>
@@ -57,7 +57,6 @@ const cargarFunciones = async function () {
                 link.appendChild(ticket)
                 $(".contenedor__tickets").appendChild(link)
                
-                    
             });
         }
 
