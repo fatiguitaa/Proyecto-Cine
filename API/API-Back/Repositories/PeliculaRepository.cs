@@ -46,6 +46,19 @@ namespace API_Back.Repositories
             return _context.Peliculas.Where(p => p.IdPelicula == id).FirstOrDefault();
         }
 
+        public string GetNombre(int id)
+        {
+            Pelicula? oPelicula = _context.Peliculas.Where(p => p.IdPelicula == id).FirstOrDefault();
+            if (oPelicula != null)
+            {
+                return oPelicula.Nombre;
+            }
+            else
+            {
+                return "no existe la pelicula";
+            }
+        }
+
         public bool Update(Pelicula oModificado)
         {
             Pelicula? oPelicula = _context.Peliculas.Where(p => p.IdPelicula == oModificado.IdPelicula).FirstOrDefault();
