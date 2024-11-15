@@ -65,7 +65,11 @@ body
     }
     .Pantalla
     {
-            
+
+    }
+    .striked
+    {
+        text-decoration: line-through;
     }
     .Asiento
     {

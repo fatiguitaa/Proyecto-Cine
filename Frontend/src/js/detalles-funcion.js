@@ -51,6 +51,7 @@ const cargarAsientos = async function () {
                     {
                         asiento.disabled=true
                         Icono.childNodes[0].classList.add("AsientoIconoOcupado")
+                        label.classList.add("striked") 
                     }
 
                 asiento.addEventListener('change',(event)=>
