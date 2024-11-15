@@ -1,0 +1,26 @@
+body
+{
+    background-color: #313131;
+    color: white;
+}
+
+#botonCancelar
+{
+    flex-direction: column;
+   margin: auto;
+    align-self: center;
+    background: gainsboro;
+    color: black;
+}
+#dataTable
+{
+    width: 60%;
+    padding: 20px; 
+    margin: 60px;  
+    border-color: black; 
+    color: rgb(0, 0, 0); 
+    text-align: center;
+    background: #d4d4d4;
+    
+  
+}
