@@ -16,7 +16,7 @@ namespace API_Front.Controllers
             _repository = repository;
         }
 
-        [HttpPut("crear")]
+        [HttpPost("crear")]
         public IActionResult Crear([FromBody] Empleado oEmpleado)
         {
             try
