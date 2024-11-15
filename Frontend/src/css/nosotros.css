@@ -12,6 +12,7 @@ html,body {
 
 }
 .member_section{
+    border-radius: 20px;
     background-color: #3A3B3C;
     margin-bottom: 2%;
     display: flex;           /* Usamos flexbox para alinear el texto y la imagen */
@@ -22,6 +23,7 @@ html,body {
     
 }
 .content_texto{
+    margin-top: 0.5625%;
     margin-left: 1%;
 }
 .footer{
@@ -31,5 +33,10 @@ html,body {
 }
 .content_img{
     align-items: right;
-    
+    margin: 10px;
+}
+.imagen_modificada{
+    border-radius: 8px;
+    width: 250px;
+    height: auto;
 }
