@@ -93,11 +93,11 @@ namespace API_Front.Controllers
             }
         }
         [HttpGet("Nombre/{id}")]
-        public IActionResult GetNombre(int idPelicula)
+        public IActionResult GetNombre(int id)
         {
             try
             {
-                return Ok(_repository.GetNombre(idPelicula));
+                return Ok(_repository.GetNombre(id));
             }
             catch
             {
