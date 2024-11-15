@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
 
                 
-                    response = await fetch(`https://localhost:7220/api/TpBd/consulta2?duracionMin=${inputConsulta.value}`);
+                    response = await fetch(`http://localhost:5141/api/TpBd/consulta2?duracionMin=${inputConsulta.value}`);
             
                 if (!response.ok) {
                     throw new Error('Error al obtener los datos');
@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (fechafin.value > fechaini.value)
                 {
                 
-                    response = await fetch(`https://localhost:7220/api/TpBd/consulta1?fechaInicio=${fechaini.value}&fehchaFin=${fechafin.value}`);
+                    response = await fetch(`http://localhost:5141/api/TpBd/consulta1?fechaInicio=${fechaini.value}&fehchaFin=${fechafin.value}`);
             
                 if (!response.ok) {
                     throw new Error('Error al obtener los datos');
@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             else if (queryValue==3)
                 {
-                     response = await fetch(`https://localhost:7220/api/TpBd/consulta3?idPelicula=${inputConsulta.value}&asientosLibres=${value}`);
+                     response = await fetch(`http://localhost:5141/api/TpBd/consulta3?idPelicula=${inputConsulta.value}&asientosLibres=${value}`);
                     console.log('Valor de la consulta:', value);
                     if (!response.ok) {
                         throw new Error('Error al obtener los datos');
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 else if (queryValue==4)
                     {
                         console.log('Valor de la consulta:', value);
-                         response = await fetch(`https://localhost:7220/api/TpBd/consulta4?idSala=${inputConsulta.value}`);
+                         response = await fetch(`http://localhost:5141/api/TpBd/consulta4?idSala=${inputConsulta.value}`);
                         
                         if (!response.ok) {
                             throw new Error('Error al obtener los datos');
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         {
                             if (inputConsulta.value>=0)
                                 {
-                             response = await fetch(`https://localhost:7220/api/TpBd/Consulta5?montoMinimo=${inputConsulta.value}`);
+                             response = await fetch(`http://localhost:5141/api/TpBd/Consulta5?montoMinimo=${inputConsulta.value}`);
                         
                             if (!response.ok) {
                                 throw new Error('Error al obtener los datos');

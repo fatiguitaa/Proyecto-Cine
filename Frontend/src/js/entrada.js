@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.cookie = `telefono=a; expires=Thu, 01 Jan 1970 00:00:00 UTC`
             document.cookie = `admin=false; expires=Thu, 01 Jan 1970 00:00:00 UTC`
 
-            window.location.href = window.location.origin
+            window.location.pathname = "/"
         }
         else if (window.location.pathname === "/gestor.html"){
             const admin = await response.json().then(usuario => usuario.esAdmin)
-            
+
             if (!admin) {
                 window.location.pathname = "/inicio.html"
             }

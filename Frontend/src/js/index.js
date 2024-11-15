@@ -60,7 +60,7 @@ $(".login__panel__enviar").addEventListener("click", async evento => {
             document.cookie = `telefono=${telefono}`
             document.cookie = `admin=${admin}`
 
-            window.location.href = "../inicio.html"
+            window.location.pathname = "/inicio.html"
         }
         else return mostrarError("Correo electronico o contraseña incorrectos.")
     }

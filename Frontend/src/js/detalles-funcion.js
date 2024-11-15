@@ -6,12 +6,6 @@ const cargarAsientos = async function () {
     const idSala = urlParams.get('idSala');
     const idReproduccion = urlParams.get('idReproduccion');
 
-    
-    //if (!idSala || !idReproduccion) {
-    //    window.location.href = "http://localhost:5500/funciones.html"
-    //    return
-    //}
-
     var precio = (await fetch(`http://localhost:5141/api/Reproduccion/${idReproduccion}`).then(response => response.json())).precio
     $("#InputCliente").value=idReproduccion
     $("#InputPrecio").value=precio

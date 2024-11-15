@@ -17,7 +17,7 @@ const cargarFunciones = async function () {
     
             funcionesTarget.forEach(funcion => {
                 const horario = document.createElement("a")
-                horario.href = `http://127.0.0.7:5500/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
+                horario.href = window.location.origin+`/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
                 horario.textContent = funcion.horarioInicio
                 document.body.appendChild(horario)
             });
@@ -32,7 +32,7 @@ const cargarFunciones = async function () {
         funciones.forEach(funcion => {
             console.log(funcion)
             const horario = document.createElement("a")
-            horario.href = `http://127.0.0.7:5500/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
+            horario.href = window.location.origin+`/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
             horario.style.display = "block"
             horario.innerHTML = `${funcion.horarioInicio}  Sala  ${funcion.numeroSala}`
             document.body.appendChild(horario)

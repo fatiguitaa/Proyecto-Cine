@@ -59,7 +59,6 @@ const registrar = async function (email, contrasena, nombre, apellido, fechaNac,
             telefono: telefono,
             idUsuario: idUsuario,
             fechaNac: fechaNac,
-
         })
     })
     
