@@ -16,16 +16,32 @@ namespace API_Back.Repositories
         }
         public bool Create(DateTime Fecha,int IdCliente,List<DetalleFactura> Detalles)
         {
-            Factura oFactura = new Factura(Fecha,IdCliente);
-            foreach (DetalleFactura oDetalle in Detalles)
+            using (var transaction = _context.Database.BeginTransaction())
             {
-                oDetalle.IdFactura = oFactura.IdFactura;
-                oFactura.DetalleFacturas.Add(oDetalle);
-                _context.DetalleFacturas.Add(oDetalle);
+                try
+                {
+
+                    Factura oFactura = new Factura(Fecha, IdCliente);
+
+                    _context.Facturas.Add(oFactura);
+                    _context.SaveChanges();
+
+                    foreach (DetalleFactura oDetalle in Detalles)
+                    {
+                        oDetalle.IdFactura = oFactura.IdFactura;
+                        oFactura.DetalleFacturas.Add(oDetalle);
+                        _context.DetalleFacturas.Add(oDetalle);
+                    }
+                    _context.SaveChanges();
+                    transaction.Commit();
+                    return true;
+                }
+                catch
+                {
+                    transaction.Rollback();
+                    return false;
+                }
             }
-            _context.Facturas.Add(oFactura);
-            return _context.SaveChanges()>0;
-            
         }
     }
 }
