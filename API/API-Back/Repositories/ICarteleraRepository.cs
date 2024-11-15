@@ -10,5 +10,8 @@ namespace API_Back.Repositories
     public interface ICarteleraRepository
     {
         List<Cartelera> GetAllByFecha(DateTime Fecha);
+
+        bool SacarPelicula(int IdCartelera, int IdPelicula);
+        bool AgregarPelicula (int IdCartelera,int Pelicula);
     }
 }

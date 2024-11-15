@@ -16,4 +16,10 @@ public partial class PeliculasXcartelera
     public virtual Cartelera IdCarteleraNavigation { get; set; }
 
     public virtual Pelicula IdPeliculaNavigation { get; set; }
+
+    public PeliculasXcartelera(int idpelicula, int idcartelera)
+    {
+        this.IdPelicula=idpelicula;
+        this.IdCartelera=idcartelera;
+    }
 }
