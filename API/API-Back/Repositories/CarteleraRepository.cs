@@ -49,7 +49,7 @@ namespace API_Back.Repositories
             Cartelera? oCartelera = _context.Carteleras.Find(Modificado.IdCartelera);
             if (oCartelera!=null)
             {
-                oCartelera = Modificado;
+                _context.Entry(oCartelera).CurrentValues.SetValues(Modificado);
             }
             return _context.SaveChanges() == 1;
         }

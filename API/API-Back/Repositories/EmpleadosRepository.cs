@@ -37,16 +37,12 @@ namespace API_Back.Repositories
             return _context.Empleados.Where(X=> X.IdUsuario==idUsuario).FirstOrDefault();
         }
 
-        public bool Update(string nombre, string apellido, DateOnly? FechaNac, string telefono, int idArea, int? idUsuario)
+        public bool Update(Empleado oModificado)
         {
-            Empleado? empleado = _context.Empleados.Where(X=>X.IdUsuario==idUsuario).FirstOrDefault();
+            Empleado? empleado = _context.Empleados.Where(X=>X.IdUsuario==oModificado.IdUsuario).FirstOrDefault();
             if (empleado != null)
             {
-                empleado.Nombre= nombre;
-                empleado.Apellido= apellido;
-                empleado.Telefono= telefono;
-                empleado.IdArea= idArea;
-                empleado.FechaNac = FechaNac;
+                _context.Entry(empleado).CurrentValues.SetValues(oModificado);
             }
             return _context.SaveChanges() == 1;
         }

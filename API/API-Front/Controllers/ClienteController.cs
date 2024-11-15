@@ -50,7 +50,7 @@ namespace API_Front.Controllers
         {
             try
             {
-                return Ok(_clienteRepository.Update(oCliente.Nombre, oCliente.Apellido, oCliente.FechaNac, oCliente.Telefono, oCliente.IdUsuario));
+                return Ok(_clienteRepository.Update(oCliente));
             }
             catch 
             {

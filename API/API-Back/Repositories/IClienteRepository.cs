@@ -11,7 +11,7 @@ namespace API_Back.Repositories
     {
         bool Create(string nombre, string apellido,DateOnly? FechaNac, string? telefono, int? idUsuario);
         List<Cliente> GetAll();
-        bool Update(string nombre, string apellido,DateOnly? FechaNac, string? telefono, int? idUsuario);
+        bool Update(Cliente oEmpleado);
         Cliente? GetByIdUsuario(int idUsuario);
     }
 }

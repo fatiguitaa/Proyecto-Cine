@@ -60,7 +60,7 @@ namespace API_Front.Controllers
         {
             try
             {
-                return Ok(_repository.Update(oEmpleado.Nombre, oEmpleado.Apellido,oEmpleado.FechaNac,oEmpleado.Telefono,oEmpleado.IdArea,oEmpleado.IdUsuario));
+                return Ok(_repository.Update(oEmpleado));
             }
             catch
             {

@@ -38,16 +38,13 @@ namespace API_Back.Repositories
             return _context.Clientes.Where(X => X.IdUsuario == idUsuario).FirstOrDefault();
         }
 
-        public bool Update(string nombre, string apellido, DateOnly? FechaNac, string? telefono, int? idUsuario)
+        public bool Update(Cliente oModificado)
         {
-            Cliente? cliente = _context.Clientes.Where(X => X.IdUsuario == idUsuario).FirstOrDefault();
+            Cliente? cliente = _context.Clientes.Where(X => X.IdUsuario == oModificado.IdUsuario).FirstOrDefault();
 
             if (cliente != null)
             {
-                cliente.Telefono = telefono;
-                cliente.Apellido = apellido;
-                cliente.Nombre = nombre;
-                cliente.FechaNac = FechaNac;
+                _context.Entry(cliente).CurrentValues.SetValues(oModificado);
             }
             return _context.SaveChanges()==1;
 
