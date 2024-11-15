@@ -40,3 +40,10 @@ html,body {
     width: 250px;
     height: auto;
 }
+.enlace_blanco{
+    color:aliceblue;
+      
+}
+.enlace_blanco:hover {
+    color: lightgray;  /* Cambia el color a gris claro cuando el enlace está en hover */
+  }
