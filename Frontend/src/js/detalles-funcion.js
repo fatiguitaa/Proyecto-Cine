@@ -62,6 +62,10 @@ const cargarAsientos = async function () {
                         CantidadDetalles++
                         event.currentTarget.parentElement.childNodes[2].childNodes[0].classList.add("AsientoIconoSeleccionado")
                         event.currentTarget.parentElement.childNodes[2].childNodes[0].classList.remove("AsientoIconoLibre")
+                        if ($("#Boton-Enviar").disabled)
+                        {
+                            $("#Boton-Enviar").disabled = false
+                        }
                     }
                     else
                     {
@@ -69,6 +73,10 @@ const cargarAsientos = async function () {
                         CantidadDetalles--
                         event.currentTarget.parentElement.childNodes[2].childNodes[0].classList.remove("AsientoIconoSeleccionado")
                         event.currentTarget.parentElement.childNodes[2].childNodes[0].classList.add("AsientoIconoLibre")
+                        if (CantidadDetalles==0)
+                            {
+                                $("#Boton-Enviar").disabled = true
+                            }
                     }
                     $("#Cantidad-Detalles").textContent="Cantidad de Asientos: x"+CantidadDetalles
                     $("#Total-Detalles").textContent="= $"+CantidadDetalles*precio//aca iria algo para buscar el precio de la entrada
