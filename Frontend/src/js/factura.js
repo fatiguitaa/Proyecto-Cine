@@ -124,6 +124,8 @@ await Promise.all(AsientosPromises);
                 }
         
                 data = await response.json();
+                alert("Compra Realizada con Exito");
+            window.history.back();
                 console.log('pija')
             });
             
