@@ -5,7 +5,7 @@ const cargarCarteleras = async function () {
     
     const cartelerasTarget = await fetch(`http://localhost:5141/api/Cartelera/${fechaISO}`)
     .then(response => response.json())
-    .then(carteleras => carteleras.slice(0, 5));
+    .then(carteleras => carteleras.slice(0, 3));
 
     const peliculasPromises = cartelerasTarget.map(cartelera =>
         fetch(`http://localhost:5141/api/Pelicula/Cartelera/${cartelera.idCartelera}`)
