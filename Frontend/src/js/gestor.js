@@ -1,5 +1,13 @@
 "use strict";
 
+CargarCombo($(".peliculas__borrar__id"),"Pelicula",2)
+CargarCombo($(".peliculas__crear__genero"),"Genero",'1')
+CargarCombo($(".peliculas__actualizar__genero"),"Genero",'1')
+CargarCombo($(".peliculas__actualizar__id"),"Pelicula",2)
+CargarCombo($(".carteleras__agregar__pelicula"),"Pelicula",2)
+CargarCombo($(".carteleras__quitar__pelicula"),"Pelicula",2)
+CargarCombo($(".empleados__crear__area"),"Area",1)
+
 const mostrarResultadoGestor = function(padreElemento, mensaje, claseResultado) {
     if ($(padreElemento).childNodes[0]) $(padreElemento).childNodes[0].remove()
 

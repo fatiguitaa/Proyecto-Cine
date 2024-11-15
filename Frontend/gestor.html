@@ -50,8 +50,8 @@
     <form class="peliculas__borrar">
         <legend>Borrar</label>
 
-        <label for="idPelicula">Id de la pelicula</label>
-        <input type="number" name="idPelicula" min="1" class="peliculas__borrar__id input">
+        <label for="idPelicula">Pelicula</label>
+        <select name="idPelicula" class="peliculas__borrar__id input">
 
         <input type="submit" class="peliculas__borrar__enviar boton">
         <div class="peliculas__borrar__resultado"></div>
@@ -75,8 +75,8 @@
       <label for="sinopsis">Sinopsis</label>
       <input type="text" name="sinopsis" class="peliculas__crear__sinopsis input">
       
-      <label for="idGenero">ID del genero</label>
-      <input type="number" name="idGenero" min="1" max="5" class="peliculas__crear__genero input">
+      <label for="idGenero">Genero</label>
+      <select name="idGenero" class="peliculas__crear__genero input">
 
       <input type="submit" class="peliculas__crear__enviar boton">
 
@@ -86,8 +86,8 @@
     <form class="peliculas__actualizar">
       <legend>Actualizar</legend>
 
-      <label for="idPelicula">ID de la pelicula</label>
-      <input type="number" name="idPelicula" min="1" class="peliculas__actualizar__id input">
+      <label for="idPelicula">Pelicula</label>
+      <select name="idPelicula" class="peliculas__actualizar__id input">
 
       <label for="urlPortada">Link a la foto de portada</label>
       <input type="text" name="urlPortada" class="peliculas__actualizar__url input">
@@ -104,8 +104,8 @@
       <label for="sinopsis">Sinopsis</label>
       <input type="text" name="sinopsis" class="peliculas__actualizar__sinopsis input">
       
-      <label for="idGenero">ID del genero</label>
-      <input type="number" name="idGenero" min="1" max="5" class="peliculas__actualizar__genero input">
+      <label for="idGenero">Genero</label>
+      <select name="idGenero" class="peliculas__actualizar__genero input">
 
       <input type="submit" class="peliculas__actualizar__enviar boton">
 
@@ -148,8 +148,8 @@
       <label for="idCartelera">Id de la cartelera</label>
       <input type="number" name="idCartelera" min="1" class="carteleras__agregar__cartelera input">
       
-      <label for="idPelicula">Id de la pelicula</label>
-      <input type="number" name="idPelicula" min="1" class="carteleras__agregar__pelicula input">
+      <label for="idPelicula">Pelicula</label>
+      <select name="idPelicula" class="carteleras__agregar__pelicula input">
 
       <input type="submit" class="carteleras__agregar__enviar boton">
 
@@ -161,8 +161,8 @@
       <label for="idCartelera">Id de la cartelera</label>
       <input type="number" name="idCartelera" min="1" class="carteleras__quitar__cartelera input">
       
-      <label for="idPelicula">Id de la pelicula</label>
-      <input type="number" name="idPelicula" min="1" class="carteleras__quitar__pelicula input">
+      <label for="idPelicula">Pelicula</label>
+      <Select name="idPelicula" class="carteleras__quitar__pelicula input">
 
       <input type="submit" class="carteleras__quitar__enviar boton">
 
@@ -181,8 +181,8 @@
       <label for="telefono">Telefono</label>
       <input type="number" name="telefono" min="1" class="empleados__crear__telefono input">
 
-      <label for="idArea">Id del area</label>
-      <input type="number" name="idArea" class="empleados__crear__area input">
+      <label for="idArea">Area</label>
+      <select name="idArea" class="empleados__crear__area input">
       
       <label for="idUsuario">Id del usuario</label>
       <input type="number" name="idUsuario" min="1" class="empleados__crear__usuario input">
@@ -195,9 +195,12 @@
       <div class="empleados__crear__resultado"></div>
     </form>
 
+
+
     <script src="./src/js/boostrap/bootstrap.min.js"></script>
     <script src="./src/js/utils/domUtils.js"></script>
     <script src="./src/js/entrada.js"></script>
+    <script src="./src/js/utils/FuncionesExtra.js"></script>
     <script src="./src/js/gestor.js"></script>
 </body>
 </html>

@@ -17,6 +17,7 @@ builder.Services.AddScoped<IAsientoRepository, AsientoRepository>();
 builder.Services.AddScoped<IFacturaRepository, FacturaRepository>();
 builder.Services.AddScoped<IGeneroRepository, GeneroRepository>();
 builder.Services.AddScoped<IIdiomaRepository, IdiomaRepository>();
+builder.Services.AddScoped<IAreaRepository, AreaRepository>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
