@@ -84,5 +84,11 @@ namespace API_Back.Repositories
         {
             return _context.Reproducciones.Find(id);
         }
+
+        public bool Create(Reproduccion oReproduccion)
+        {
+            _context.Reproducciones.Add(oReproduccion);
+            return _context.SaveChanges() == 1;
+        }
     }
 }
