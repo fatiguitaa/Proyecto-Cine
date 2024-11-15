@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_Back.Repositories
 {
-    internal class GeneroRepository : IGeneroRepository
+    public class GeneroRepository : IGeneroRepository
     {
         private CineDBContext _context;
         public GeneroRepository(CineDBContext context)
