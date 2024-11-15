@@ -399,3 +399,4 @@ FodyWeavers.xsd
 
 # Frontend
 node_modules/
+API/API-Front/appsettings.json
