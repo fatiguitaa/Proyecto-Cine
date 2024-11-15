@@ -37,5 +37,21 @@ namespace API_Back.Repositories
         {
             return _context.Carteleras.Where(C => C.FechaFin >= Fecha).OrderBy(C => C.FechaInicio).ToList();
         }
+
+        public bool Create(Cartelera oCartelera)
+        {
+            _context.Carteleras.Add(oCartelera);
+            return _context.SaveChanges() == 1;
+        }
+
+        public bool Update(Cartelera Modificado)
+        {
+            Cartelera? oCartelera = _context.Carteleras.Find(Modificado.IdCartelera);
+            if (oCartelera!=null)
+            {
+                oCartelera = Modificado;
+            }
+            return _context.SaveChanges() == 1;
+        }
     }
 }

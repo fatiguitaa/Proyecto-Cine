@@ -31,13 +31,27 @@ namespace API_Front.Controllers
         [HttpPost]
         public IActionResult Create([FromBody]Cartelera oCartelera)
         {
-            return Ok("aca no hay nada pa");
+            try
+            {
+                return Ok(_repository.Create(oCartelera));
+            }
+            catch
+            {
+                return StatusCode(500, "error intenro");
+            }
         }
 
         [HttpPut]
         public IActionResult Update([FromBody]Cartelera oCartelera)
         {
-            return Ok("aca no hay nada pa X2");
+            try
+            {
+                return Ok(_repository.Update(oCartelera));
+            }
+            catch
+            {
+                return StatusCode(500, "error intenro");
+            }
         }
         [HttpPut("Pelicula")]
         public IActionResult AgregarPelicula(int idCartelera, int IdPelicula)

@@ -11,6 +11,8 @@ namespace API_Back.Repositories
     {
         List<Cartelera> GetAllByFecha(DateTime Fecha);
 
+        bool Create(Cartelera oCartelera);
+        bool Update(Cartelera oCartelera);
         bool SacarPelicula(int IdCartelera, int IdPelicula);
         bool AgregarPelicula (int IdCartelera,int Pelicula);
     }

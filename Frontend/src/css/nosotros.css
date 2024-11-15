@@ -1,0 +1,42 @@
+.content {
+    min-height: 100vh; /* Asegura que el contenido llene toda la altura de la ventana */
+     /* Espacio para el footer, ajusta según el tamaño del footer */
+    margin-left: 5%;
+    margin-right: 20%;
+    
+}
+html,body {
+    background-color: #313131;
+    color: var(--blanco);
+    
+
+}
+.member_section{
+    border-radius: 20px;
+    background-color: #3A3B3C;
+    margin-bottom: 2%;
+    display: flex;           /* Usamos flexbox para alinear el texto y la imagen */
+         /* Alinea verticalmente la imagen y el texto */
+               /* Usamos flexbox para alinear el contenido */
+  justify-content: space-between;  /* Deja el máximo espacio entre el texto y la imagen */
+  
+    
+}
+.content_texto{
+    margin-top: 0.5625%;
+    margin-left: 1%;
+}
+.footer{
+    background-color:#3A3B3C ;
+    padding: 10px 0;
+    margin: 0; 
+}
+.content_img{
+    align-items: right;
+    margin: 10px;
+}
+.imagen_modificada{
+    border-radius: 8px;
+    width: 250px;
+    height: auto;
+}

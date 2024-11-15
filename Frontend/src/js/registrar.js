@@ -71,6 +71,12 @@ const registrar = async function (email, contrasena, nombre, apellido, fechaNac,
     document.cookie = `telefono=${telefono}`
     document.cookie = `admin=${false}`
 
+    const idCliente = await fetch(`http://localhost:5141/api/Cliente/GetByIdUsuario?idUsuario=${idUsuario}`)
+    .then(response => response.json())
+    .then(cliente => cliente.idCliente)
+
+    document.cookie = `idCliente=${idCliente}`
+
     window.location.pathname = "/inicio.html"
 }
 

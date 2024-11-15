@@ -6,9 +6,13 @@ const cargarAsientos = async function () {
     const idSala = urlParams.get('idSala');
     const idReproduccion = urlParams.get('idReproduccion');
 
-    var precio = (await fetch(`http://localhost:5141/api/Reproduccion/${idReproduccion}`).then(response => response.json())).precio
-    $("#InputCliente").value=idReproduccion
-    $("#InputPrecio").value=precio
+    var precio = await fetch(`http://localhost:5141/api/Reproduccion/${idReproduccion}`)
+    .then(response => response.json())
+    .then(reproduccion => reproduccion.precio)
+
+    $("#InputIDCliente").value = obtenerCookie("idCliente")
+    $("#InputReproduccion").value = idReproduccion
+    $("#InputPrecio").value = precio
 
 
     const matrizAsientos = await fetch(`http://localhost:5141/api/Sala?idSala=${idSala}&idReproduccion=${idReproduccion}`)
@@ -51,6 +55,7 @@ const cargarAsientos = async function () {
                     {
                         asiento.disabled=true
                         Icono.childNodes[0].classList.add("AsientoIconoOcupado")
+                        label.classList.add("striked") 
                     }
 
                 asiento.addEventListener('change',(event)=>

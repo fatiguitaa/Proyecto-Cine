@@ -24,7 +24,7 @@ namespace API_Back.Repositories
         public bool Delete(int id)
         {
            Pelicula? oPelicula = _context.Peliculas.Where(p => p.IdPelicula == id).FirstOrDefault();
-           if (oPelicula != null && oPelicula.EstaActiva == null)
+           if (oPelicula != null && oPelicula.EstaActiva == true)
            {
                 oPelicula.EstaActiva = false;
            }
@@ -33,12 +33,12 @@ namespace API_Back.Repositories
 
         public List<Pelicula> GetAll()
         {
-            return _context.Peliculas.ToList();
+            return _context.Peliculas.Where(P => P.EstaActiva == true).ToList();
         }
 
         public List<Pelicula> GetAllByCartelera(int IdCartelera)
         {
-            return _context.Carteleras.Where(C => C.IdCartelera == IdCartelera).SelectMany(C => C.PeliculasXcarteleras).Select(X => X.IdPeliculaNavigation).ToList();
+            return _context.Carteleras.Where(C => C.IdCartelera == IdCartelera).SelectMany(C => C.PeliculasXcarteleras).Select(X => X.IdPeliculaNavigation).Where(P=>P.EstaActiva==true).ToList();
         }
 
         public Pelicula? GetById(int id)

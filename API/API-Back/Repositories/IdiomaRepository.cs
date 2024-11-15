@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace API_Back.Repositories
 {
-    public class IdiomaRepository
+    public class IdiomaRepository : IIdiomaRepository
     {
         private CineDBContext _context;
         public IdiomaRepository(CineDBContext context)

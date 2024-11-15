@@ -20,5 +20,7 @@ namespace API_Back.Repositories
         string? GetNombre(int id);
 
         Reproduccion? GetById(int id);
+
+        bool Create(Reproduccion oReproduccion);
     }
 }

@@ -1,4 +1,5 @@
-﻿using API_Back.Repositories;
+﻿using API_Back.Models;
+using API_Back.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -54,7 +55,7 @@ namespace API_Front.Controllers
             }
         }
         [HttpGet("Nombre/{id}")]
-        public IActionResult GetNombre(int id) 
+        public IActionResult GetNombre(int id)
         {
             try
             {
@@ -68,9 +69,21 @@ namespace API_Front.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            try 
+            try
             {
                 return Ok(_repository.GetById(id));
+            }
+            catch
+            {
+                return StatusCode(500, "error interno");
+            }
+        }
+        [HttpPost]
+        public IActionResult Create(Reproduccion oReproduccion)
+        {
+            try
+            {
+                return Ok(_repository.Create(oReproduccion));
             }
             catch
             {
