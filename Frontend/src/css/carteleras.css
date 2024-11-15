@@ -3,6 +3,7 @@ body {
 }
 
 .titulo {
+    margin-top: 3rem;
     color: var(--blanco);
     text-align: center;
     font-size: 7rem;

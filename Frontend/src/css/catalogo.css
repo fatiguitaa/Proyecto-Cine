@@ -5,6 +5,7 @@
 .catalogo__titulo {
     text-align: center;
     font-size: 5rem;
+    margin-top: 3rem;
     color: var(--blanco);
     text-transform: uppercase;
 }
