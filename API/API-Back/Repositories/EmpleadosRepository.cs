@@ -23,6 +23,7 @@ namespace API_Back.Repositories
             empleado.Telefono = telefono;
             empleado.IdArea = idArea;
             empleado.FechaNac = FechaNac;
+            empleado.IdUsuario = idUsuario;
             _context.Empleados.Add(empleado);
             return _context.SaveChanges()==1;
         }
