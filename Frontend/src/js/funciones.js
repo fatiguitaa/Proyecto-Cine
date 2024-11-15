@@ -7,22 +7,60 @@ const cargarFunciones = async function () {
     const idPelicula = urlParams.get('idPelicula');
 
     if (!idCartelera || !idPelicula){
-        const fechaISO = new Date().toISOString();
-
-        return await fetch(`http://localhost:5141/api/Reproduccion?fecha=${fechaISO}`)
-        .then(response => response.json())
-        .then(funciones => {
-            $("h1").textContent = "Proximas funciones"
-            const funcionesTarget = funciones.slice(0, 11)
+        $(".funciones__titulo").textContent = "Proximas funciones"
     
-            funcionesTarget.forEach(funcion => {
-                const horario = document.createElement("a")
-                horario.href = window.location.origin+`/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
-                horario.textContent = funcion.horarioInicio
-                document.body.appendChild(horario)
+            const fechaISO = new Date().toISOString();
+
+            const reproducciones = await fetch(`http://localhost:5141/api/Reproduccion?fecha=${fechaISO}`)
+            .then(response => response.json())
+
+            const funcionesTarget = reproducciones.slice(0, 12)
+    
+            funcionesTarget.forEach(async funcion => {
+                const peliResponse = await fetch(`http://localhost:5141/api/Pelicula/Nombre/${funcion.idPelicula}`);
+
+                const peliData = await peliResponse.text();
+                
+                const link = document.createElement("a")
+                link.href = window.location.origin+`/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
+                const ticket = document.createElement("div")
+                ticket.classList.add("cardWrap")
+                const fechaHora = funcion.horarioInicio.split("T")[1].split(":").slice(0, 2)
+                const hora = `${fechaHora[0]}:${fechaHora[1]}`
+                const fecha = funcion.horarioInicio.split("T")[0]
+                ticket.innerHTML = `<div class="carta cardLeft">
+                <h1>Cine <span>G1</span></h1>
+                <div class="title">
+                    <h2>${peliData}</h2>
+                    <span>pelicula</span>
+                </div>
+                <div class="seat">
+                    <h2>${funcion.numeroSala}</h2>
+                    <span>sala</span>
+                </div>
+                <div class="time">
+                    <h2>${hora}</h2>
+                    <span>time</span>
+                </div>
+                <div class="time">
+                    <h2>${fecha}</h2>
+                    <span>fecha</span>
+                </div>
+                </div>
+                <div class="carta cardRight">
+                    <div class="number">
+                    <h3>${funcion.numeroSala}</h3>
+                    <span>sala</span>
+                    </div>
+                </div>`
+
+                link.appendChild(ticket)
+                $(".contenedor__tickets").appendChild(link)
+               
+                    
             });
-        })
-    }
+        }
+
     
     const funciones= await fetch(`http://localhost:5141/api/Reproduccion/Cartelera?idCartelera=${idCartelera}&idPelicula=${idPelicula}`)
     .then(response => response.json());
@@ -32,23 +70,50 @@ const cargarFunciones = async function () {
 
    
     const peliResponse = await fetch(`http://localhost:5141/api/Pelicula/Nombre/${funcionPrincipal.idPelicula}`);
-    if (!peliResponse.ok) {
-        throw new Error('Error al obtener los datos de la reproducción');
-    }
-    const peliData = await peliResponse.text();
 
-        $("h1").textContent = `Funciones para : "${peliData}" hasta fin de mes:`
+        const peliData = await peliResponse.text();
+
+        $(".funciones__titulo").textContent = `Funciones para ${peliData} hasta fin de mes:`
 
         funciones.forEach(funcion => {
-            console.log(funcion)
-            
-            const horario = document.createElement("a")
-            horario.href = window.location.origin+`/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
-            horario.style.display = "block"
-            horario.innerHTML = `${funcion.horarioInicio}  Sala  ${funcion.numeroSala}`
-            document.body.appendChild(horario)
+            const link = document.createElement("a")
+            link.href = window.location.origin+`/detalles-funcion.html?idSala=${funcion.numeroSala}&idReproduccion=${funcion.idReproduccion}`
+            const ticket = document.createElement("div")
+            ticket.classList.add("cardWrap")
+            const fechaHora = funcion.horarioInicio.split("T")[1].split(":").slice(0, 2)
+            const hora = `${fechaHora[0]}:${fechaHora[1]}`
+            const fecha = funcion.horarioInicio.split("T")[0]
+
+            ticket.innerHTML = `<div class="carta cardLeft">
+            <h1>Cine <span>G1</span></h1>
+            <div class="title">
+                <h2>${peliData}</h2>
+                <span>pelicula</span>
+            </div>
+            <div class="seat">
+                <h2>${funcion.numeroSala}</h2>
+                <span>sala</span>
+            </div>
+            <div class="time">
+                <h2>${hora}</h2>
+                <span>time</span>
+            </div>
+            <div class="time">
+                <h2>${fecha}</h2>
+                <span>fecha</span>
+            </div>
+            </div>
+            <div class="carta cardRight">
+                <div class="number">
+                <h3>${funcion.numeroSala}</h3>
+                <span>sala</span>
+                </div>
+            </div>`
+
+            link.appendChild(ticket)
+            $(".contenedor__tickets").appendChild(link)
         });
     
-}
+    }
 
 document.addEventListener("DOMContentLoaded", cargarFunciones)
