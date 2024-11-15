@@ -34,8 +34,45 @@ const mostrarError = function (mensaje) {
     $(".registrar__error").appendChild(error)
 }
 
-const registrar = function (email, contrasena, nombre, apellido, edad, telefono) {
+const registrar = async function (email, contrasena, nombre, apellido, fechaNac, telefono) {
+    const contrasenaHash = CryptoJS.MD5(contrasena).toString(CryptoJS.enc.Hex)
+    await fetch(`http://localhost:5141/api/Usuario/registrar`, { method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "eMail": email,
+            "contrasenia": contrasenaHash
+        })
+    })
 
+    const idUsuario = await fetch(`http://localhost:5141/api/Usuario/email/${email}`).then(response => response.json()).then(response => response.idUsuario)
+
+    await fetch(`http://localhost:5141/api/Cliente/crear`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nombre: nombre,
+            apellido: apellido,
+            telefono: telefono,
+            idUsuario: idUsuario,
+            fechaNac: fechaNac,
+
+        })
+    })
+    
+    document.cookie = `idUsuario=${idUsuario}`
+    document.cookie = `email=${email}`
+    document.cookie = `contrasena=${contrasenaHash}`
+    document.cookie = `nombre=${nombre}`
+    document.cookie = `apellido=${apellido}`
+    document.cookie = `fechaNac=${fechaNac}`
+    document.cookie = `telefono=${telefono}`
+    document.cookie = `admin=${false}`
+
+    window.location.pathname = "/inicio.html"
 }
 
 $(".registrar__panel__enviar").addEventListener("click", async evento => {
@@ -44,18 +81,18 @@ $(".registrar__panel__enviar").addEventListener("click", async evento => {
     const email = $(".registrar__panel__email").value
 
     if (!validarEmail(email)) {
-        mostrarError("Correo electrónico inválido: nombre@dominio.tld")
-        return
+        return mostrarError("Correo electrónico inválido: nombre@dominio.tld")
     }
+
+    const estado = (await fetch(`http://localhost:5141/api/Usuario/email/${$(".registrar__panel__email").value}`)).status
+
+    if (estado === 200) return mostrarError("Ya existe un usuario con ese email.")
 
     const contrasena = $(".registrar__panel__contrasena").value
     const contrasenaInvalid = validarContrasena(contrasena)
 
-    if (contrasenaInvalid) {
-        mostrarError(contrasenaInvalid)
-        return
-    }
-
+    if (contrasenaInvalid) return mostrarError(contrasenaInvalid)
+        
     const contrasenaRepetida = $(".registrar__panel__repetir").value
 
     if (contrasena !== contrasenaRepetida) return mostrarError("Las contraseñas no coinciden.")
@@ -72,10 +109,15 @@ $(".registrar__panel__enviar").addEventListener("click", async evento => {
     const hoy = new Date().setHours(0, 0, 0, 0)
 
     if (fechaNac > hoy || isNaN(fechaNac)) return mostrarError("Fecha invalida.")
-    
-    if (await !fetch("http://localhost:5141/api/Usuario/email")
-    .then(response => response.json())) return mostrarError("Ya existe un usu")
-    
+
+    const fechaNacISO = fechaNac.toISOString().split("T")[0]
+    registrar($(".registrar__panel__email").value, 
+    $(".registrar__panel__contrasena").value, 
+    $(".registrar__panel__nombre").value, 
+    $(".registrar__panel__apellido").value, 
+    fechaNacISO, 
+    $(".registrar__panel__telefono").value)
+
 })
 
 $(".registrar__panel__visibilidad").addEventListener("click", evento => {
