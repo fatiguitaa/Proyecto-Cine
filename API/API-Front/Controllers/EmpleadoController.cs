@@ -11,7 +11,7 @@ namespace API_Front.Controllers
     public class EmpleadoController : ControllerBase
     {
         IEmpleadosRepository _repository;
-        private EmpleadoController(IEmpleadosRepository repository)
+        public EmpleadoController(IEmpleadosRepository repository)
         {
             _repository = repository;
         }
@@ -48,10 +48,10 @@ namespace API_Front.Controllers
             {
                 return Ok(_repository.GetByIdUsuario(idUsuario));
             }
-            catch 
+            catch (Exception ex)
             {
 
-                return StatusCode(500, "error interno");
+                return StatusCode(500, "error interno: "+ex);
             }
         }
 

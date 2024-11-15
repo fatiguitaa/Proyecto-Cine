@@ -10,7 +10,7 @@ namespace API_Back.Repositories
     public class EmpleadosRepository : IEmpleadosRepository
     {
         private CineDBContext _context;
-        private EmpleadosRepository(CineDBContext context)
+        public EmpleadosRepository(CineDBContext context)
         {
             _context = context;
         }
