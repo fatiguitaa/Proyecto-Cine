@@ -6,11 +6,11 @@ const cargarAsientos = async function () {
     const idSala = urlParams.get('idSala');
     const idReproduccion = urlParams.get('idReproduccion');
 
-
-    if (!idSala || !idReproduccion) {
-        window.location.href = "http://localhost:5500/funciones.html"
-        return
-    }
+    
+    //if (!idSala || !idReproduccion) {
+    //    window.location.href = "http://localhost:5500/funciones.html"
+    //    return
+    //}
 
     var precio = (await fetch(`http://localhost:5141/api/Reproduccion/${idReproduccion}`).then(response => response.json())).precio
     $("#InputCliente").value=idReproduccion
@@ -90,11 +90,8 @@ const cargarAsientos = async function () {
 }
 
 
-const params = new URL('http://127.0.0.7:5500/patata.html?idcliente=1&precio=7000&idReproduccion=617&idPromocion=0&46=on&49=on&56=on&63=on&68=on&79=on&80=on&82=on').searchParams
 
-const numbersList = Array.from(params.keys()).map(Number)
-numbersList.splice(0,4)
-console.log(numbersList)
+
 
 
 document.addEventListener("DOMContentLoaded", cargarAsientos)
