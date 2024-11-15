@@ -59,7 +59,7 @@ namespace API_Front.Controllers
         {
             try
             {
-                return Ok(_repository.Update(pelicula));
+                return Ok(_repository.Create(pelicula));
             }
             catch
             {
