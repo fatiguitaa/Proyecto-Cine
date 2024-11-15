@@ -21,11 +21,18 @@ const cargarCarteleras = async function () {
         const carteleraActual = document.createElement("div")
         carteleraActual.classList.add("cartelera")
 
-        const carteleraFechas = document.createElement("h2")
-        carteleraFechas.classList.add("cartelera__fechas")
-        carteleraFechas.textContent = `Desde ${fechas.fechaInicio}  Hasta ${fechas.fechaFin}`
+        const contenedorFechas = document.createElement("div")
 
-        carteleraActual.appendChild(carteleraFechas)
+        const fechaInicio = document.createElement("h2")
+        fechaInicio.classList.add("cartelera__fechas")
+        fechaInicio.textContent = `Desde ${fechas.fechaInicio}`
+
+        const fechaFin = document.createElement("h2")
+        fechaFin.classList.add("cartelera__fechas")
+        fechaFin.textContent = `Hasta ${fechas.fechaFin}`
+        contenedorFechas.appendChild(fechaInicio)
+        contenedorFechas.appendChild(fechaFin)
+        carteleraActual.appendChild(contenedorFechas)
 
         peliculas.forEach(pelicula => {
             const peliculaContainer = document.createElement("div")

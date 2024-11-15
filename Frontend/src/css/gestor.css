@@ -2,3 +2,7 @@ body {
     background-color: #313131;
     color: var(--blanco);
 }
+
+.peliculas__borrar__error {
+    
+}
