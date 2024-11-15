@@ -46,7 +46,7 @@ const reproduccionesPromises = ListaDetalles.map(async (item) => {
 
 await Promise.all(reproduccionesPromises);
 const AsientosPromises = ListaDetalles.map(async (item) => {
-    const response = await fetch(`https://localhost:5141/api/Asiento/Nombre/${item.IdAsiento}`);
+    const response = await fetch(`http://localhost:5141/api/Asiento/Nombre/${item.IdAsiento}`);
     if (!response.ok) {
         throw new Error('Error al obtener los datos de la reproducción');
     }
