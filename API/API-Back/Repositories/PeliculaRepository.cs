@@ -64,9 +64,11 @@ namespace API_Back.Repositories
             Pelicula? oPelicula = _context.Peliculas.Where(p => p.IdPelicula == oModificado.IdPelicula).FirstOrDefault();
             if (oPelicula != null)
             {
-                oPelicula = oModificado;
+                _context.Entry(oPelicula).CurrentValues.SetValues(oModificado);
             }
+
             return _context.SaveChanges() == 1;
+
         }
     }
 }
