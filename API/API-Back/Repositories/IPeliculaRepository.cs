@@ -15,5 +15,6 @@ namespace API_Back.Repositories
         bool Create(Pelicula oPelicula);
         bool Update(Pelicula oPelicula);
         bool Delete(int id);
+        string GetNombre(int id);
     }
 }

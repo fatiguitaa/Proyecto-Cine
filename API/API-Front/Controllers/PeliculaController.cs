@@ -17,15 +17,15 @@ namespace API_Front.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll() 
+        public IActionResult GetAll()
         {
             try
             {
                 return Ok(_repository.GetAll());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                return StatusCode(500,"Error interno "+ex);
+                return StatusCode(500, "Error interno " + ex);
             }
         }
         [HttpGet("{id}")]
@@ -42,7 +42,7 @@ namespace API_Front.Controllers
         }
 
         [HttpGet("Cartelera/{idCartelera}")]
-        public IActionResult GetByCartelera(int idCartelera) 
+        public IActionResult GetByCartelera(int idCartelera)
         {
             try
             {
@@ -59,7 +59,7 @@ namespace API_Front.Controllers
         {
             try
             {
-                return Ok(_repository.Update(pelicula));
+                return Ok(_repository.Create(pelicula));
             }
             catch
             {
@@ -86,6 +86,18 @@ namespace API_Front.Controllers
             try
             {
                 return Ok(_repository.Delete(idPelicula));
+            }
+            catch
+            {
+                return StatusCode(500, "error interno");
+            }
+        }
+        [HttpGet("Nombre/{id}")]
+        public IActionResult GetNombre(int idPelicula)
+        {
+            try
+            {
+                return Ok(_repository.GetNombre(idPelicula));
             }
             catch
             {
