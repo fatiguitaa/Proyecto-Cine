@@ -60,6 +60,12 @@ $(".login__panel__enviar").addEventListener("click", async evento => {
             document.cookie = `telefono=${telefono}`
             document.cookie = `admin=${admin}`
 
+            const idCliente = await fetch(`http://localhost:5141/api/Cliente/GetByIdUsuario?idUsuario=${idUsuario}`)
+            .then(response => response.json())
+            .then(cliente => cliente.idCliente)
+
+            document.cookie = `idCliente=${idCliente}`
+
             window.location.pathname = "/inicio.html"
         }
         else return mostrarError("Correo electronico o contraseña incorrectos.")

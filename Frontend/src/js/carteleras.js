@@ -44,7 +44,7 @@ const cargarCarteleras = async function () {
             </div>`
 
             const botonVerFunciones = document.createElement("a")
-            botonVerFunciones.href = `http://127.0.0.7:5500/funciones.html?idCartelera=${idCartelera}&idPelicula=${pelicula.idPelicula}`
+            botonVerFunciones.href = window.location.origin+`/funciones.html?idCartelera=${idCartelera}&idPelicula=${pelicula.idPelicula}`
             botonVerFunciones.innerHTML = "<button class=\"pelicula__container__ver boton\">Ver funciones</button>"
 
             peliculaContainer.appendChild(peliculaCard)

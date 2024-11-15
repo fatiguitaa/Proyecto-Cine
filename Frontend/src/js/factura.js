@@ -23,9 +23,7 @@ console.log(ListaDetalles)
 const fechaFormateada = new Date().toISOString();
 console.log(fechaFormateada);
 
-
-       
-const response = await fetch(`https://localhost:7220/api/Factura?Fecha=${fechaFormateada}&IdCliente=${_idCliente}`,{
+const response = await fetch(`http://localhost:5141/api/Factura?Fecha=${fechaFormateada}&IdCliente=${_idCliente}`,{
     method: "POST",
     headers: {
         "Content-Type": "application/json"
@@ -37,10 +35,6 @@ const response = await fetch(`https://localhost:7220/api/Factura?Fecha=${fechaFo
         {
          throw new Error('Error al obtener los datos');
         }
-
-         data = await response.json();
-
-         console.log('sexo',response)
 
         }
         Factura()

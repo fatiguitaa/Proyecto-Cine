@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 "contrasenia": contrasenaCookie
             })
         })
-        
 
         if (response.status === 204) {
             document.cookie = `idUsuario=a; expires=Thu, 01 Jan 1970 00:00:00 UTC`
@@ -25,6 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             document.cookie = `fechaNac=a; expires=Thu, 01 Jan 1970 00:00:00 UTC`
             document.cookie = `telefono=a; expires=Thu, 01 Jan 1970 00:00:00 UTC`
             document.cookie = `admin=false; expires=Thu, 01 Jan 1970 00:00:00 UTC`
+            document.cookie = `idCliente=a; expires=Thu, 01 Jan 1970 00:00:00 UTC`
 
             window.location.pathname = "/"
         }
@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         linkGestor.innerHTML = "<a href=\"./gestor.html\">Gestor</a>"
         $(".nav-links").appendChild(linkGestor)
     }
-    
 })
 
 window.addEventListener("load", () => {
